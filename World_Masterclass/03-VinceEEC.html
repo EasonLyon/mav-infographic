@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Elite Class - Marketing Strategy Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Notyf -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tippy.js -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #374151; /* gray-700 */
+        }
+        .section-title {
+            @apply text-3xl font-bold text-blue-700 mb-8 text-center;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-lg;
+        }
+        .icon-text {
+            @apply flex items-center space-x-2 text-gray-700;
+        }
+        .icon-text svg {
+            @apply w-5 h-5 text-blue-600;
+        }
+        /* Cool Palette: Primary blue-600, Secondary cyan-400, Text gray-800/700/600, BG white/gray-50/blue-50/cyan-50 */
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- 0. Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex flex-wrap justify-center items-center space-x-2 md:space-x-4">
+                <a href="#summary" class="text-xs md:text-sm font-medium text-gray-700 hover:text-blue-600 transition">Summary</a>
+                <a href="#problem" class="text-xs md:text-sm font-medium text-gray-700 hover:text-blue-600 transition">Problem</a>
+                <a href="#solution" class="text-xs md:text-sm font-medium text-gray-700 hover:text-blue-600 transition">Solution</a>
+                <a href="#fit" class="text-xs md:text-sm font-medium text-gray-700 hover:text-blue-600 transition">Fit/USP</a>
+                <a href="#strategy" class="text-xs md:text-sm font-medium text-gray-700 hover:text-blue-600 transition">Strategy</a>
+                <a href="#viral" class="text-xs md:text-sm font-medium text-gray-700 hover:text-blue-600 transition">Viral/KPIs</a>
+                <a href="#action" class="text-xs md:text-sm font-medium text-gray-700 hover:text-blue-600 transition">Action</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-4 md:p-8">
+        <!-- Header Title -->
+        <header class="text-center py-12 bg-white rounded-lg shadow-xl mb-12" data-aos="fade-down">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-700">Expert Elite Class</h1>
+            <p class="text-xl text-gray-600 mt-2">Strategic Marketing Research Infographic</p>
+            <p class="text-md text-gray-500 mt-1">Prepared for Vince Tan</p>
+        </header>
+
+        <!-- 1. Executive Summary -->
+        <section id="summary" class="py-16 px-4 md:px-8 bg-blue-50 rounded-lg shadow-lg mb-12" data-aos="fade-up">
+            <h2 class="section-title text-center font-bold text-2xl mb-8">Executive Summary</h2>
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <p class="text-xl text-gray-700 leading-relaxed">
+                    <span class="font-semibold text-red-600">Problem:</span> Experienced professionals often struggle to effectively monetize their expertise and transform it into a profitable coaching, speaking, or training business, facing overwhelm and a lack of a clear roadmap.
+                </p>
+                <p class="text-xl text-gray-700 leading-relaxed">
+                    <span class="font-semibold text-green-600">Solution:</span> The Expert Elite Class by Vince Tan provides a proven, step-by-step 'Expert-to-Impactful-Entrepreneur' system, fusing insider marketing strategies with comprehensive business frameworks.
+                </p>
+                <p class="text-2xl font-bold text-blue-700 mt-6">
+                    Key Value: Rapidly launch and scale your expert business with actionable strategies, a supportive global mastermind community, and unlock your $10,000+ expert business potential.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. Problem Identification & Market Opportunity -->
+        <section id="problem" class="py-16 px-4 md:px-8 bg-red-50 rounded-lg shadow-lg mb-12" data-aos="fade-up">
+            <h2 class="section-title text-center font-bold text-2xl text-red-700 mb-8">Problem Identification & Market Opportunity</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card" data-aos="fade-right">
+                    <h3 class="text-xl font-semibold text-red-600 mb-4">Consumer Insights: Key Pain Points</h3>
+                    <ul class="space-y-3">
+                        <li class="icon-text"><i data-lucide="map"></i><span>Lack of a Clear Roadmap: Overwhelmed by information, unsure where to start or what steps to take.</span></li>
+                        <li class="icon-text"><i data-lucide="target"></i><span>Difficulty with Marketing & Sales: Struggle to find clients or an audience, unsure how to market effectively.</span></li>
+                        <li class="icon-text"><i data-lucide="shield-question"></i><span>Imposter Syndrome & Lack of Confidence: Fear of not being "expert enough," anxiety about public speaking.</span></li>
+                        <li class="icon-text"><i data-lucide="book-open"></i><span>Generic or Incomplete Training: Past experiences with courses that were too theoretical or lacked actionable advice.</span></li>
+                    </ul>
+                </div>
+                <div class="card" data-aos="fade-left">
+                    <h3 class="text-xl font-semibold text-red-600 mb-4">User Quotes</h3>
+                    <div class="space-y-4">
+                        <blockquote class="italic text-gray-700 border-l-4 border-red-500 pl-4 py-2 bg-red-100 rounded">"I have years of experience in my field, but no idea how to actually package it into a coaching offer people would pay for."</blockquote>
+                        <blockquote class="italic text-gray-700 border-l-4 border-red-500 pl-4 py-2 bg-red-100 rounded">"I'm terrified of putting myself out there as an 'expert'. What if people don't think I'm qualified?"</blockquote>
+                        <blockquote class="italic text-gray-700 border-l-4 border-red-500 pl-4 py-2 bg-red-100 rounded">"Invested in a cheap public speaking course but it was too generic. Need something more step-by-step for building a business around it."</blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mt-8">
+                <div class="card" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-red-600 mb-4">Top Search Queries</h3>
+                    <ul class="space-y-2 list-disc list-inside text-gray-700">
+                        <li>"how to become a coach"</li>
+                        <li>"monetize my expertise"</li>
+                        <li>"speaker training programs"</li>
+                        <li>"marketing for coaches and speakers"</li>
+                        <li>"Vince Tan expert elite class reviews"</li>
+                    </ul>
+                </div>
+                <div class="card text-center" data-aos="fade-left" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-red-600 mb-2">Market Opportunity (TAM)</h3>
+                    <p class="text-5xl font-extrabold text-red-700 my-4" id="market-size-value">$2-5 Billion</p>
+                    <p class="text-gray-600">Annual range for programs aimed at creating new coaches, speakers, and trainers.</p>
+                     <p class="text-sm text-gray-500 mt-2">Active coach practitioner market: $5.34B (2023) -> $7.30B (2025 proj.)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Solution & Competitive Landscape -->
+        <section id="solution" class="py-16 px-4 md:px-8 bg-green-50 rounded-lg shadow-lg mb-12" data-aos="fade-up">
+            <h2 class="section-title text-center font-bold text-2xl text-green-700 mb-8">Solution: Expert Elite Class & Competitive Landscape</h2>
+            
+            <div class="mb-12" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-green-600 mb-6 text-center">Top 3 Competitor Comparison</h3>
+                <div class="overflow-x-auto card">
+                    <table class="w-full table-auto border border-gray-300">
+                        <thead>
+                            <tr class="bg-green-100">
+                                <th class="px-4 py-2 border text-left">Competitor</th>
+                                <th class="px-4 py-2 border text-left" data-tippy-content="Focus of their primary curriculum or offering.">Curriculum Focus</th>
+                                <th class="px-4 py-2 border text-left" data-tippy-content="General pricing category.">Price Point</th>
+                                <th class="px-4 py-2 border text-left" data-tippy-content="Availability and strength of community or direct mentorship.">Community/Mentorship</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border px-4 py-2 font-medium">Brendon Burchard (Experts Academy)</td>
+                                <td class="border px-4 py-2">High-performance coaching, marketing, business building, certification.</td>
+                                <td class="border px-4 py-2">Premium (Thousands USD)</td>
+                                <td class="border px-4 py-2">Strong existing audience, proven frameworks.</td>
+                            </tr>
+                            <tr class="hover:bg-green-100">
+                                <td class="border px-4 py-2 font-medium">Tony Robbins (Business Mastery)</td>
+                                <td class="border px-4 py-2">Motivational, mindset, peak performance, large events.</td>
+                                <td class="border px-4 py-2">Premium (Very Expensive)</td>
+                                <td class="border px-4 py-2">Powerful live events, transformation focus. Less specific "train the trainer".</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 font-medium">Online Course Platforms (e.g., Udemy)</td>
+                                <td class="border px-4 py-2">Broad range of specific skills (public speaking, coaching basics).</td>
+                                <td class="border px-4 py-2">Low to Mid-Range (<$200 per course)</td>
+                                <td class="border px-4 py-2">Often lack depth, personalized feedback, or comprehensive system.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mb-12" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-green-600 mb-6 text-center">Expert Elite Class: Features, Advantages, Benefits (FAB)</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="card border-t-4 border-green-500" data-aos="zoom-in-up">
+                        <h4 class="font-bold text-lg text-green-700 mb-2">Clear, Step-by-Step System</h4>
+                        <p class="text-sm text-gray-600 mb-1"><span class="font-semibold">Advantage:</span> Provides a structured, easy-to-follow path from expertise to a functioning business.</p>
+                        <p class="text-sm text-gray-600"><span class="font-semibold">Benefit:</span> Reduces overwhelm and uncertainty, saving time by not having to invent a process.</p>
+                    </div>
+                    <div class="card border-t-4 border-green-500" data-aos="zoom-in-up" data-aos-delay="100">
+                        <h4 class="font-bold text-lg text-green-700 mb-2">Insider Marketing Techniques</h4>
+                        <p class="text-sm text-gray-600 mb-1"><span class="font-semibold">Advantage:</span> Delivers unique, effective marketing strategies based on Vince Tan's proven success.</p>
+                        <p class="text-sm text-gray-600"><span class="font-semibold">Benefit:</span> Gains a competitive edge, potentially achieving faster results than with generic advice for profitable business & impact.</p>
+                    </div>
+                    <div class="card border-t-4 border-green-500" data-aos="zoom-in-up" data-aos-delay="200">
+                        <h4 class="font-bold text-lg text-green-700 mb-2">Access to Mastermind Community</h4>
+                        <p class="text-sm text-gray-600 mb-1"><span class="font-semibold">Advantage:</span> Connects participants with a network of peers for support, accountability, and collaboration.</p>
+                        <p class="text-sm text-gray-600"><span class="font-semibold">Benefit:</span> Feels less isolated, gains motivation from others, finds potential collaborators, fostering a supportive journey.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-green-600 mb-6 text-center">Competitive Arena: Value Curve</h3>
+                <canvas id="radarChart"></canvas>
+            </div>
+        </section>
+
+        <!-- 4. Problem-Solution Fit & Unique Value Proposition -->
+        <section id="fit" class="py-16 px-4 md:px-8 bg-blue-50 rounded-lg shadow-lg mb-12" data-aos="fade-up">
+            <h2 class="section-title text-center font-bold text-2xl mb-8">Problem-Solution Fit & Unique Value Proposition</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="card" data-aos="fade-right">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-4">Target Persona: "Experienced Executive Emily"</h3>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center text-gray-500 text-3xl">
+                            <i data-lucide="user-circle-2"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-700"><span class="font-medium">Age:</span> 45-55</p>
+                            <p class="text-gray-700"><span class="font-medium">Role:</span> Senior Manager/Director (15+ yrs exp.)</p>
+                            <p class="text-gray-700"><span class="font-medium">Goal:</span> Build respected coaching practice, achieve autonomy, make tangible impact.</p>
+                        </div>
+                    </div>
+                    <p class="font-semibold text-gray-800">Key Pain Points:</p>
+                    <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 mt-1">
+                        <li>Doesn't know how to "productize" her expertise.</li>
+                        <li>Concerned about "feast or famine" consulting cycle.</li>
+                        <li>Intimidated by marketing and personal branding.</li>
+                        <li>Limited time to figure it all out from scratch.</li>
+                    </ul>
+                </div>
+                <div class="card" data-aos="fade-left">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-4">Unique Selling Proposition (USP)</h3>
+                    <p class="text-xl font-extrabold text-purple-700 leading-relaxed py-4 px-6 bg-purple-100 border-l-4 border-purple-500 rounded">
+                        Expert Elite Class provides experienced professionals with Vince Tan's proven, step-by-step 'Expert-to-Impactful-Entrepreneur' system, fusing insider marketing strategies with comprehensive business frameworks to rapidly launch and scale a profitable coaching, speaking, or training business – all within a supportive global mastermind community.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-12 text-center card bg-purple-50" data-aos="zoom-in">
+                <h3 class="text-xl font-semibold text-purple-700 mb-4">Hit Promotional Offer: The Expert Ignition System™</h3>
+                <p class="text-gray-700 mb-2">A single, all-inclusive flagship program designed for comprehensive transformation.</p>
+                <p class="text-gray-600 mb-4">Includes: Core modules, $10,000+ value tools & frameworks, 12-month mastermind access, personalized "Ignition Roadmap" call, exclusive "Ignition Toolkit".</p>
+                <p class="text-2xl font-bold text-purple-600 mb-4">Investment: ~$2,997 (Placeholder)</p>
+                <button id="promoOfferBtn" class="bg-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-700 transition shadow-md">
+                    Unlock Your Expert Potential Now!
+                </button>
+            </div>
+        </section>
+
+        <!-- 5. Marketing & Engagement Strategy -->
+        <section id="strategy" class="py-16 px-4 md:px-8 bg-yellow-50 rounded-lg shadow-lg mb-12" data-aos="fade-up">
+            <h2 class="section-title text-center font-bold text-2xl text-yellow-700 mb-8">Marketing & Engagement Strategy</h2>
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="card" data-aos="fade-up" data-aos-delay="0">
+                    <h4 class="font-bold text-lg text-yellow-800 mb-2 icon-text"><i data-lucide="users" class="text-yellow-600"></i>Social Proof</h4>
+                    <p class="text-sm text-gray-600">Showcase numerous video/written testimonials and quantifiable results from successful graduates.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="font-bold text-lg text-yellow-800 mb-2 icon-text"><i data-lucide="alert-triangle" class="text-yellow-600"></i>Loss Aversion</h4>
+                    <p class="text-sm text-gray-600">Offer time-sensitive bonuses for early enrollment (e.g., exclusive Q&A, limited spots for direct feedback).</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="font-bold text-lg text-yellow-800 mb-2 icon-text"><i data-lucide="anchor" class="text-yellow-600"></i>Anchoring Effect</h4>
+                    <p class="text-sm text-gray-600">Clearly state "$10,000+ Total Value" before revealing the actual, more accessible program price.</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                 <div class="card" data-aos="fade-right">
+                    <h3 class="text-xl font-semibold text-yellow-700 mb-4">Creative Angles</h3>
+                    <ul class="space-y-3">
+                        <li class="p-3 bg-yellow-100 rounded">
+                            <p class="font-semibold text-yellow-800">Blueprint for Clarity:</p>
+                            <p class="text-sm text-gray-600">"The Experienced Professional's Blueprint: From Corporate Maze to Coaching Clarity & Profit."</p>
+                        </li>
+                        <li class="p-3 bg-yellow-100 rounded">
+                            <p class="font-semibold text-yellow-800">Ignite Your Empire:</p>
+                            <p class="text-sm text-gray-600">"Ignite Your Expert Empire: The Spark You Need to Stop Procrastinating and Start Profiting (with Hope!)."</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card text-center flex flex-col justify-center items-center" data-aos="fade-left">
+                    <h3 class="text-xl font-semibold text-yellow-700 mb-4">Slogan/Tagline</h3>
+                    <p class="text-3xl font-extrabold text-yellow-800 bg-yellow-200 px-6 py-4 rounded-md shadow">
+                        "Expertise Ignited, Impact Multiplied, Income Unlocked."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Proposed Viral Marketing & KPIs -->
+        <section id="viral" class="py-16 px-4 md:px-8 bg-indigo-50 rounded-lg shadow-lg mb-12" data-aos="fade-up">
+            <h2 class="section-title text-center font-bold text-2xl text-indigo-700 mb-8">Proposed Viral Marketing & KPIs</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card" data-aos="fade-right">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-4">Viral Marketing Idea: "The Expert Ignition™ Legacy Challenge"</h3>
+                    <p class="text-gray-700 mb-2">A FREE 5-day online challenge hosted by Vince Tan, designed to deliver mini-wins and build anticipation for Expert Elite Class.</p>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p class="icon-text"><i data-lucide="calendar-days" class="text-indigo-500"></i>Daily actionable tasks related to core EEC elements.</p>
+                        <p class="icon-text"><i data-lucide="share-2" class="text-indigo-500"></i>Participants share "wins" on social media (#ExpertIgnitionChallenge).</p>
+                        <p class="icon-text"><i data-lucide="video" class="text-indigo-500"></i>Daily live sessions with Vince Tan for feedback & previews.</p>
+                        <p class="icon-text"><i data-lucide="gift" class="text-indigo-500"></i>Prizes for engagement (e.g., free EEC enrollment).</p>
+                    </div>
+                    <p class="mt-3 text-indigo-700 font-semibold">Generates leads, social proof, and community buzz.</p>
+                </div>
+                <div class="card" data-aos="fade-left">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-4">Key Performance Indicators (KPIs)</h3>
+                     <div class="grid grid-cols-2 gap-4">
+                        <div class="p-3 bg-indigo-100 rounded-md shadow-sm">
+                            <p class="font-semibold text-indigo-800 icon-text"><i data-lucide="users-round" class="text-indigo-500"></i>Lead Generation</p>
+                            <p class="text-xs text-gray-600" data-tippy-content="Number of sign-ups for challenges, webinars, lead magnets.">Challenge/Webinar Sign-ups</p>
+                        </div>
+                        <div class="p-3 bg-indigo-100 rounded-md shadow-sm">
+                            <p class="font-semibold text-indigo-800 icon-text"><i data-lucide="percent-circle" class="text-indigo-500"></i>Conversion Rates</p>
+                            <p class="text-xs text-gray-600" data-tippy-content="Percentage of leads converting to paying customers from sales pages, CTAs.">Sales Page CTAs</p>
+                        </div>
+                        <div class="p-3 bg-indigo-100 rounded-md shadow-sm">
+                            <p class="font-semibold text-indigo-800 icon-text"><i data-lucide="dollar-sign" class="text-indigo-500"></i>Customer Acquisition Cost (CAC)</p>
+                            <p class="text-xs text-gray-600" data-tippy-content="Total marketing spend divided by number of new customers acquired.">Marketing Spend / New Customers</p>
+                        </div>
+                        <div class="p-3 bg-indigo-100 rounded-md shadow-sm">
+                            <p class="font-semibold text-indigo-800 icon-text"><i data-lucide="trending-up" class="text-indigo-500"></i>Customer Lifetime Value (CLTV)</p>
+                            <p class="text-xs text-gray-600" data-tippy-content="Total revenue expected from a single customer account throughout their relationship.">Total Revenue per Customer</p>
+                        </div>
+                         <div class="p-3 bg-indigo-100 rounded-md shadow-sm col-span-2">
+                            <p class="font-semibold text-indigo-800 icon-text"><i data-lucide="smile" class="text-indigo-500"></i>Student Satisfaction (NPS)</p>
+                            <p class="text-xs text-gray-600" data-tippy-content="Net Promoter Score indicating likelihood of recommending the program.">Likelihood to Recommend</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Call to Action -->
+        <section id="action" class="py-16 text-center" data-aos="zoom-in-up">
+            <h2 class="section-title text-center font-bold text-2xl mb-8">Ready to Transform Your Expertise into a Thriving Business?</h2>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto">Join Expert Elite Class and get the proven system, insider strategies, and supportive community you need to succeed.</p>
+            <button id="mainCtaBtn" class="bg-blue-600 text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-blue-700 transition shadow-xl transform hover:scale-105">
+                Enroll in Expert Elite Class Now!
+            </button>
+            <p class="mt-6 text-gray-500">Or <a href="mailto:info@vincetan.com" class="text-blue-600 hover:underline">contact us</a> for more information.</p>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 bg-gray-800 text-gray-300 text-sm">
+        <p>Developed by My Ads Vantage (MAV) – AI Marketing that Sells For You.</p>
+        <p>© 2024 Marketing Strategic Research Infographic. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Initialize Notyf
+        const notyf = new Notyf({
+            duration: 3000,
+            position: { x: 'right', y: 'top' },
+            types: [
+                { type: 'success', background: '#28a745', icon: { className: 'notyf__icon--success', tagName: 'i' } },
+                { type: 'info', background: '#17a2b8', icon: { className: 'notyf__icon--info', tagName: 'i' } }
+            ]
+        });
+        notyf.open({type: 'info', message: 'Expert Elite Class Infographic Loaded!'});
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animated Counter for Market Size
+        function animateValue(obj, start, end, duration, isCurrency = false, currencySymbol = '$') {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                let currentValue = Math.floor(progress * (end - start) + start);
+                if (isCurrency) {
+                    obj.innerHTML = currencySymbol + currentValue.toLocaleString() + " Billion";
+                } else {
+                     obj.innerHTML = currentValue.toLocaleString();
+                }
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                     if (isCurrency) {
+                        obj.innerHTML = currencySymbol + end.toLocaleString() + " Billion";
+                     } else {
+                        obj.innerHTML = end.toLocaleString();
+                     }
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        const marketSizeElement = document.getElementById("market-size-value");
+        // Animate from 0 to 5 (representing billions)
+        // Check if element exists to prevent errors if it's removed
+        if (marketSizeElement) {
+             // Animate from 0 to 5 (representing billions)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateValue(marketSizeElement, 0, 5, 2000, true, 'USD '); // Animates up to 5 for "USD 2-5 Billion"
+                        observer.unobserve(entry.target); // Stop observing after animation starts
+                    }
+                });
+            }, { threshold: 0.5 }); // Trigger when 50% visible
+            observer.observe(marketSizeElement);
+        }
+
+
+        // Chart.js Radar Chart
+        const radarCtx = document.getElementById('radarChart');
+        if (radarCtx) {
+            new Chart(radarCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Price Access.', 'Comprehensiveness', 'Credibility', 'Practicality', 'Marketing System', 'Community', 'Insider Knowledge', 'Target Audience Focus'],
+                    datasets: [{
+                        label: 'Expert Elite Class',
+                        data: [3, 5, 5, 5, 5, 5, 5, 5], // Ratings: Low=1, Med=3, High=5, V.High=5
+                        fill: true,
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)', // blue-500
+                        borderColor: 'rgb(59, 130, 246)',
+                        pointBackgroundColor: 'rgb(59, 130, 246)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(59, 130, 246)'
+                    }, {
+                        label: 'Global Big Name (e.g., Robbins)',
+                        data: [1, 5, 5, 4, 5, 4, 5, 4],
+                        fill: true,
+                        backgroundColor: 'rgba(20, 184, 166, 0.2)', // teal-500
+                        borderColor: 'rgb(20, 184, 166)',
+                        pointBackgroundColor: 'rgb(20, 184, 166)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(20, 184, 166)'
+                    }, {
+                        label: 'Generic Online Course (e.g., Udemy)',
+                        data: [5, 1, 2, 2, 1, 1, 1, 2],
+                        fill: true,
+                        backgroundColor: 'rgba(245, 158, 11, 0.2)', // amber-500
+                        borderColor: 'rgb(245, 158, 11)',
+                        pointBackgroundColor: 'rgb(245, 158, 11)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(245, 158, 11)'
+                    }]
+                },
+                options: {
+                    elements: {
+                        line: {
+                            borderWidth: 3
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 5,
+                            ticks: { stepSize: 1 }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.r !== null) {
+                                        const ratings = ['N/A', 'Low', 'Low-Med', 'Medium', 'Med-High', 'High'];
+                                        label += ratings[context.parsed.r] || context.parsed.r;
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: true
+                }
+            });
+        }
+
+        // Tippy.js Tooltips
+        tippy('[data-tippy-content]', {
+            animation: 'scale-subtle',
+            theme: 'light-border', // A nice built-in theme
+        });
+
+        // SweetAlert2 Modals
+        const promoOfferBtn = document.getElementById('promoOfferBtn');
+        if (promoOfferBtn) {
+            promoOfferBtn.addEventListener('click', () => {
+                Swal.fire({
+                    title: 'The Expert Ignition System™ Offer!',
+                    html: `
+                        <div class="text-left">
+                            <p class="mb-2">You're one step closer to transforming your expertise!</p>
+                            <p class="mb-2">This flagship program includes:</p>
+                            <ul class="list-disc list-inside mb-2 text-sm">
+                                <li>Core Expert Elite Class Modules</li>
+                                <li>$10,000+ Value Tools & Frameworks</li>
+                                <li>12-Month Global Mastermind Access</li>
+                                <li>Personalized "Ignition Roadmap" Call</li>
+                                <li>Exclusive "Ignition Toolkit"</li>
+                            </ul>
+                            <p class="font-semibold">Investment: ~$2,997 (Special Offer)</p>
+                            <p class="mt-3 text-xs">This is a conceptual offer. For actual enrollment, please visit the official website.</p>
+                        </div>
+                    `,
+                    icon: 'info',
+                    confirmButtonText: 'Sounds Great!',
+                    confirmButtonColor: '#4F46E5', // indigo-600
+                });
+            });
+        }
+
+        const mainCtaBtn = document.getElementById('mainCtaBtn');
+        if (mainCtaBtn) {
+            mainCtaBtn.addEventListener('click', () => {
+                Swal.fire({
+                    title: 'Ready to Enroll?',
+                    text: "You're about to take a significant step towards building your expert empire with Vince Tan's Expert Elite Class!",
+                    icon: 'success',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, Let\'s Go!',
+                    cancelButtonText: 'Tell Me More Later',
+                    confirmButtonColor: '#1D4ED8', // blue-700
+                    cancelButtonColor: '#6B7280', // gray-500
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Redirect to a placeholder or actual enrollment page
+                        // window.location.href = 'https://vincetan.com/experteliteclass-enroll'; 
+                        Swal.fire('Redirecting!', 'You would be redirected to the enrollment page.', 'info');
+                        notyf.success('Great choice! Preparing to redirect...');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
