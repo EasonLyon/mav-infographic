@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-T">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Entrepreneurship Masterclass - Marketing Strategy Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Notyf (Notifications) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    
+    <!-- SweetAlert2 (Modals/Alerts) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- Tippy.js (Tooltips) -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css"/>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #374151; /* gray-700 */
+        }
+        .section-title {
+            @apply text-3xl sm:text-4xl font-bold text-slate-800 mb-10 text-center;
+        }
+        h2.section-title, h2 {
+            font-weight: bold !important;
+            font-size: 2.5rem !important;
+            text-align: center !important;
+            padding: 1.5rem 0 !important;
+            margin-bottom: 2.5rem !important;
+            line-height: 1.2;
+        }
+        h3 {
+            font-weight: bold !important;
+            font-size: 1.7rem !important;
+            text-align: center !important;
+            padding: 1rem 0 !important;
+            margin-bottom: 1.5rem !important;
+            line-height: 1.2;
+        }
+        .subsection-title {
+            @apply text-2xl font-semibold text-slate-700 mb-6;
+        }
+        .icon-text {
+            @apply flex items-center space-x-2 text-slate-600;
+        }
+        .stat-card {
+            @apply bg-white p-6 rounded-xl shadow-lg transition-transform hover:scale-105;
+        }
+        .nav-link {
+            @apply text-sm md:text-base font-medium text-gray-600 hover:text-blue-600 transition-colors duration-300;
+        }
+        .brand-text-blue { color: #2563EB; } /* blue-600 */
+        .brand-text-cyan { color: #06B6D4; } /* cyan-500 */
+        .brand-bg-blue { background-color: #2563EB; }
+        .brand-bg-cyan { background-color: #06B6D4; }
+
+        /* Custom scrollbar for a cleaner look (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2563EB; /* blue-600 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1D4ED8; /* blue-700 */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 antialiased">
+
+    <!-- 0. Navigation Bar -->
+    <nav class="sticky top-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold brand-text-blue">AI Masterclass Strategy</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#summary" class="nav-link">Summary</a>
+                        <a href="#problem" class="nav-link">Problem</a>
+                        <a href="#solution" class="nav-link">Solution</a>
+                        <a href="#fit-usp" class="nav-link">Fit/USP</a>
+                        <a href="#strategy" class="nav-link">Strategy</a>
+                        <a href="#viral-kpis" class="nav-link">Viral/KPIs</a>
+                        <a href="#action" class="nav-link">Action</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#summary" class="block nav-link px-3 py-2 rounded-md hover:bg-gray-100">Summary</a>
+                <a href="#problem" class="block nav-link px-3 py-2 rounded-md hover:bg-gray-100">Problem</a>
+                <a href="#solution" class="block nav-link px-3 py-2 rounded-md hover:bg-gray-100">Solution</a>
+                <a href="#fit-usp" class="block nav-link px-3 py-2 rounded-md hover:bg-gray-100">Fit/USP</a>
+                <a href="#strategy" class="block nav-link px-3 py-2 rounded-md hover:bg-gray-100">Strategy</a>
+                <a href="#viral-kpis" class="block nav-link px-3 py-2 rounded-md hover:bg-gray-100">Viral/KPIs</a>
+                <a href="#action" class="block nav-link px-3 py-2 rounded-md hover:bg-gray-100">Action</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 1. Executive Summary -->
+        <section id="summary" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-sky-100">
+            <div class="container mx-auto text-center" data-aos="fade-up">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">
+                    <span class="brand-text-blue">AI Entrepreneurship Masterclass:</span>
+                    <span class="text-slate-700">From Idea to Investor-Ready</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto mb-4">
+                    <strong>Problem:</strong> Aspiring entrepreneurs are overwhelmed by AI's pace and struggle to apply it effectively to build businesses, lacking clear guidance, capital, or community.
+                </p>
+                <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto mb-6">
+                    <strong>Solution:</strong> Vince Tan's AI Entrepreneurship Masterclass offers a hands-on, A-Z blueprint to launch and scale AI-powered ventures, covering idea validation, zero-capital strategies, investor pitching, and community building.
+                </p>
+                <p class="text-xl sm:text-2xl font-semibold brand-text-cyan max-w-3xl mx-auto">
+                    Key Takeaway: Master AI entrepreneurship and launch one of 6 proven AI-powered businesses, from zero capital to investor-ready, with our hands-on VC framework and success community.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. Problem Identification & Market Opportunity -->
+        <section id="problem" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-rose-50">
+            <div class="container mx-auto">
+                <h2 class="section-title" data-aos="fade-up">The Challenge & The Opportunity</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="subsection-title text-xl mb-3">Consumer Insights</h3>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="icon-text"><i data-lucide="zap" class="w-5 h-5 text-rose-500"></i><span>72% of marketers feel overwhelmed by AI.</span></li>
+                            <li class="icon-text"><i data-lucide="book-open" class="w-5 h-5 text-rose-500"></i><span>Desire for practical, step-by-step AI guides.</span></li>
+                            <li class="icon-text"><i data-lucide="users" class="w-5 h-5 text-rose-500"></i><span>Need for capital, validation & community.</span></li>
+                            <li class="icon-text"><i data-lucide="shield-check" class="w-5 h-5 text-rose-500"></i><span>Demand for authentic value over hype.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="subsection-title text-xl mb-3">User Voices</h3>
+                        <div class="space-y-3">
+                            <p class="italic text-slate-700 text-sm p-3 bg-rose-100 rounded-md">"I see all these AI tools, but I'm totally lost on how to actually build a REAL business with them." <span class="block text-xs text-rose-600 mt-1">- Aspiring Entrepreneur</span></p>
+                            <p class="italic text-slate-700 text-sm p-3 bg-rose-100 rounded-md">"Will I get actionable steps I can use immediately, or is it just fluff?" <span class="block text-xs text-rose-600 mt-1">- Cautious Learner</span></p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="subsection-title text-xl mb-3">Top Search Queries</h3>
+                        <ul class="space-y-1 text-slate-600 text-sm">
+                            <li><i data-lucide="search" class="inline w-4 h-4 mr-1 text-rose-500"></i> "how to start a business with AI"</li>
+                            <li><i data-lucide="search" class="inline w-4 h-4 mr-1 text-rose-500"></i> "best AI tools for entrepreneurs"</li>
+                            <li><i data-lucide="search" class="inline w-4 h-4 mr-1 text-rose-500"></i> "AI business ideas no code"</li>
+                            <li><i data-lucide="search" class="inline w-4 h-4 mr-1 text-rose-500"></i> "validate business idea AI"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center" data-aos="fade-up">
+                    <h3 class="subsection-title">Market Size & Opportunity</h3>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <i data-lucide="globe-2" class="w-12 h-12 brand-text-blue mx-auto mb-3"></i>
+                            <p class="text-3xl font-bold brand-text-cyan counter" data-target="1000">0</p>
+                            <p class="text-slate-600">Trillion USD Global E-learning Market by 2027</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <i data-lucide="graduation-cap" class="w-12 h-12 brand-text-blue mx-auto mb-3"></i>
+                            <p class="text-3xl font-bold brand-text-cyan counter" data-target="411">0</p>
+                            <p class="text-slate-600">Billion USD MOOCs Market by 2030</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <i data-lucide="trending-up" class="w-12 h-12 brand-text-blue mx-auto mb-3"></i>
+                            <p class="text-3xl font-bold brand-text-cyan"><span class="counter" data-target="14.1">0</span>%</p>
+                            <p class="text-slate-600">CAGR Entrepreneurship Learning Pathway Market</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Solution & Competitive Landscape -->
+        <section id="solution" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-emerald-50">
+            <div class="container mx-auto">
+                <h2 class="section-title" data-aos="fade-up">Our Solution vs. The Market</h2>
+
+                <div class="mb-12" data-aos="fade-up">
+                    <h3 class="subsection-title text-center">Top Competitor Snapshot</h3>
+                    <div class="overflow-x-auto bg-white rounded-lg shadow-md">
+                        <table class="w-full table-auto text-sm text-left text-slate-600">
+                            <thead class="text-xs text-slate-700 uppercase bg-emerald-100">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">Competitor</th>
+                                    <th scope="col" class="px-6 py-3">Key Features</th>
+                                    <th scope="col" class="px-6 py-3">Weakness for AI Entrepreneurship</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b hover:bg-emerald-50">
+                                    <td class="px-6 py-4 font-medium text-slate-900">MasterClass (General)</td>
+                                    <td class="px-6 py-4">High production value, celebrity instructors.</td>
+                                    <td class="px-6 py-4">Less focus on hands-on business building; AI content not core.</td>
+                                </tr>
+                                <tr class="border-b hover:bg-emerald-50">
+                                    <td class="px-6 py-4 font-medium text-slate-900">Udemy/Coursera</td>
+                                    <td class="px-6 py-4">Vast course selection, skill-based, certifications.</td>
+                                    <td class="px-6 py-4">Variable quality, lacks "guru-led" workshop feel & deep community.</td>
+                                </tr>
+                                <tr class="hover:bg-emerald-50">
+                                    <td class="px-6 py-4 font-medium text-slate-900">Specialized AI Courses</td>
+                                    <td class="px-6 py-4">Focus on AI, specific tool application.</td>
+                                    <td class="px-6 py-4">Often tool-focused, not holistic A-Z entrepreneurship; may miss "zero capital" / "investor-ready" aspects.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mb-12" data-aos="fade-up">
+                    <h3 class="subsection-title text-center">Vince Tan's AI Masterclass: FAB</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="stat-card text-center" data-tippy-content="Complete roadmap from idea to funding using AI.">
+                            <i data-lucide="map" class="w-12 h-12 text-emerald-600 mx-auto mb-3"></i>
+                            <h4 class="font-semibold text-lg mb-1 text-slate-800">A-Z AI Startup Blueprint</h4>
+                            <p class="text-sm text-slate-600"><strong>Advantage:</strong> Proven step-by-step system.</p>
+                            <p class="text-sm text-slate-500"><strong>Benefit:</strong> Confidently launch & scale, even with zero capital, impress investors.</p>
+                        </div>
+                        <div class="stat-card text-center" data-tippy-content="Practical, immediately usable business opportunities.">
+                            <i data-lucide="lightbulb" class="w-12 h-12 text-emerald-600 mx-auto mb-3"></i>
+                            <h4 class="font-semibold text-lg mb-1 text-slate-800">6+ Ready-to-Launch AI Models</h4>
+                            <p class="text-sm text-slate-600"><strong>Advantage:</strong> Concrete business opportunities.</p>
+                            <p class="text-sm text-slate-500"><strong>Benefit:</strong> Skip guesswork, build a profitable AI venture quickly.</p>
+                        </div>
+                        <div class="stat-card text-center" data-tippy-content="Guidance from an experienced entrepreneur and peer support.">
+                            <i data-lucide="users-2" class="w-12 h-12 text-emerald-600 mx-auto mb-3"></i>
+                            <h4 class="font-semibold text-lg mb-1 text-slate-800">Expert Mentorship & Community</h4>
+                            <p class="text-sm text-slate-600"><strong>Advantage:</strong> Ongoing support & networking.</p>
+                            <p class="text-sm text-slate-500"><strong>Benefit:</strong> Get feedback, find partners, stay motivated, learn from a credible mentor.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-up">
+                    <h3 class="subsection-title text-center">Competitive Value Curve</h3>
+                    <div class="bg-white p-4 sm:p-6 rounded-lg shadow-lg">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Problem-Solution Fit & Unique Value Proposition -->
+        <section id="fit-usp" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-sky-50">
+            <div class="container mx-auto">
+                <h2 class="section-title" data-aos="fade-up">Connecting with Our Audience</h2>
+
+                <div class="grid lg:grid-cols-2 gap-10 mb-12">
+                    <div data-aos="fade-right">
+                        <h3 class="subsection-title">Target Persona: Ambitious Alex</h3>
+                        <div class="bg-white p-6 rounded-lg shadow-lg flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-20 h-20 bg-sky-200 rounded-full flex items-center justify-center">
+                                <i data-lucide="user-cog" class="w-10 h-10 text-sky-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-slate-600 text-sm"><strong>Age:</strong> 22-30, Tech Enthusiast</p>
+                                <p class="text-slate-600 text-sm"><strong>Goals:</strong> Build disruptive AI business, financial success.</p>
+                                <p class="text-slate-600 text-sm"><strong>Pains:</strong> Tech overwhelm, idea validation, funding hurdles.</p>
+                                <p class="text-slate-600 text-sm mt-2"><strong>Wants:</strong> Clear roadmap, cutting-edge tools, mentorship.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <h3 class="subsection-title">Target Persona: Pragmatic Priya</h3>
+                         <div class="bg-white p-6 rounded-lg shadow-lg flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-20 h-20 bg-sky-200 rounded-full flex items-center justify-center">
+                                <i data-lucide="user-check" class="w-10 h-10 text-sky-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-slate-600 text-sm"><strong>Age:</strong> 30-45, SME Owner/Side Hustler</p>
+                                <p class="text-slate-600 text-sm"><strong>Goals:</strong> Increase profits, save time, low-risk income.</p>
+                                <p class="text-slate-600 text-sm"><strong>Pains:</strong> Limited budget, operational overwhelm, tech complexity.</p>
+                                <p class="text-slate-600 text-sm mt-2"><strong>Wants:</strong> Easy AI solutions, clear ROI, affordable tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h3 class="subsection-title">Unique Selling Proposition (USP)</h3>
+                    <p class="text-2xl font-extrabold text-purple-700 max-w-3xl mx-auto p-6 bg-purple-100 rounded-lg shadow-inner">
+                        Launch one of 6 proven AI-powered businesses from <span class="underline decoration-purple-400 decoration-wavy">zero capital to investor-ready</span>, using Vince Tan's hands-on VC framework and close-knit success community.
+                    </p>
+                </div>
+
+                <div class="text-center" data-aos="zoom-in">
+                    <h3 class="subsection-title">Hit Promotional Offer</h3>
+                    <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl mx-auto">
+                        <p class="text-xl text-slate-700 mb-4">Limited-Time Opportunity:</p>
+                        <p class="text-2xl font-bold brand-text-blue mb-6">Join the AI Entrepreneurship Masterclass 1-Hour <span class="text-purple-600">Free Preview</span> (Value $200)!</p>
+                        <button id="promoOfferButton" class="bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300 transform hover:scale-105">
+                            Discover the Blueprint <i data-lucide="arrow-right" class="inline w-5 h-5 ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Marketing & Engagement Strategy -->
+        <section id="strategy" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-amber-50">
+            <div class="container mx-auto">
+                <h2 class="section-title" data-aos="fade-up">Igniting Engagement</h2>
+                
+                <div class="mb-12" data-aos="fade-up">
+                    <h3 class="subsection-title text-center">Impulse Purchase Triggers</h3>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="stat-card text-center">
+                            <i data-lucide="clock" class="w-10 h-10 text-amber-600 mx-auto mb-2"></i>
+                            <h4 class="font-semibold text-slate-700">Scarcity/Urgency</h4>
+                            <p class="text-sm text-slate-600">Limited spots, early bird offers.</p>
+                        </div>
+                        <div class="stat-card text-center">
+                            <i data-lucide="star" class="w-10 h-10 text-amber-600 mx-auto mb-2"></i>
+                            <h4 class="font-semibold text-slate-700">Social Proof</h4>
+                            <p class="text-sm text-slate-600">Testimonials, community numbers.</p>
+                        </div>
+                        <div class="stat-card text-center">
+                            <i data-lucide="award" class="w-10 h-10 text-amber-600 mx-auto mb-2"></i>
+                            <h4 class="font-semibold text-slate-700">Authority</h4>
+                            <p class="text-sm text-slate-600">Expert instructor, proven frameworks.</p>
+                        </div>
+                        <div class="stat-card text-center">
+                            <i data-lucide="gift" class="w-10 h-10 text-amber-600 mx-auto mb-2"></i>
+                            <h4 class="font-semibold text-slate-700">Value Proposition</h4>
+                            <p class="text-sm text-slate-600">Clear outcomes (6 AI businesses).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10 mb-12">
+                    <div data-aos="fade-right">
+                        <h3 class="subsection-title">Creative Angles</h3>
+                        <ul class="space-y-3 bg-white p-6 rounded-lg shadow-md">
+                            <li class="icon-text text-base"><i data-lucide="rocket" class="w-5 h-5 text-amber-500"></i><span><strong>For Alex:</strong> "Build the Next AI Unicorn: Get the VC-backed blueprint from idea to funding."</span></li>
+                            <li class="icon-text text-base"><i data-lucide="sparkles" class="w-5 h-5 text-amber-500"></i><span><strong>For Priya:</strong> "AI for Real People: Start Your Profitable Side Hustle with Zero Coding & Minimal Capital."</span></li>
+                            <li class="icon-text text-base"><i data-lucide="alert-triangle" class="w-5 h-5 text-amber-500"></i><span><strong>General:</strong> "Don't Get Left Behind by AI. Turn Confusion into Concrete Business Action."</span></li>
+                        </ul>
+                    </div>
+                    <div data-aos="fade-left" class="text-center md:text-left">
+                        <h3 class="subsection-title">Slogan/Tagline</h3>
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <p class="text-3xl font-semibold text-amber-700 leading-tight">
+                                AI Entrepreneurship Masterclass:
+                                <span class="block mt-1 text-2xl brand-text-blue">Build Your Future, Today.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Proposed Viral Marketing & KPIs -->
+        <section id="viral-kpis" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-indigo-50">
+            <div class="container mx-auto">
+                <h2 class="section-title" data-aos="fade-up">Fueling Growth & Measuring Success</h2>
+                
+                <div class="grid md:grid-cols-2 gap-10 mb-12">
+                    <div data-aos="fade-right">
+                        <h3 class="subsection-title">Proposed Viral Mechanisms</h3>
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="flex items-center mb-2">
+                                    <i data-lucide="share-2" class="w-8 h-8 text-indigo-600 mr-3"></i>
+                                    <h4 class="text-xl font-semibold text-slate-700">Referral Program</h4>
+                                </div>
+                                <p class="text-slate-600 text-sm">"Refer a friend, both get 10% off the full masterclass."</p>
+                                <div class="flex items-center justify-around mt-4 text-xs text-indigo-500">
+                                    <span>User</span> <i data-lucide="arrow-right"></i> <span>Invites Friend</span> <i data-lucide="arrow-right"></i> <span>Friend Joins</span> <i data-lucide="arrow-right"></i> <span>Both Benefit</span>
+                                </div>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="flex items-center mb-2">
+                                    <i data-lucide="users" class="w-8 h-8 text-indigo-600 mr-3"></i>
+                                    <h4 class="text-xl font-semibold text-slate-700">Community Showcase</h4>
+                                </div>
+                                <p class="text-slate-600 text-sm">Encourage sharing AI business "wins" from the masterclass to inspire others and build social proof.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-left">
+                        <h3 class="subsection-title">Key Performance Indicators (KPIs)</h3>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="stat-card text-sm" data-tippy-content="Number of leads generated for the free preview.">
+                                <div class="icon-text mb-1"><i data-lucide="user-plus" class="w-5 h-5 text-indigo-500"></i><span class="font-semibold text-slate-700">Free Preview Sign-ups</span></div>
+                                <p class="text-2xl font-bold brand-text-cyan counter-kpi" data-target="5000">0+</p>
+                            </div>
+                             <div class="stat-card text-sm" data-tippy-content="Percentage of preview attendees who purchase the full masterclass.">
+                                <div class="icon-text mb-1"><i data-lucide="percent" class="w-5 h-5 text-indigo-500"></i><span class="font-semibold text-slate-700">Conversion Rate (Preview to Paid)</span></div>
+                                <p class="text-2xl font-bold brand-text-cyan counter-kpi" data-target="15">0%</p>
+                            </div>
+                            <div class="stat-card text-sm" data-tippy-content="Total number of students enrolled in the paid masterclass.">
+                                <div class="icon-text mb-1"><i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-500"></i><span class="font-semibold text-slate-700">Full Masterclass Enrollments</span></div>
+                                <p class="text-2xl font-bold brand-text-cyan counter-kpi" data-target="750">0+</p>
+                            </div>
+                            <div class="stat-card text-sm" data-tippy-content="Cost to acquire one paying customer.">
+                                <div class="icon-text mb-1"><i data-lucide="dollar-sign" class="w-5 h-5 text-indigo-500"></i><span class="font-semibold text-slate-700">Customer Acquisition Cost (CAC)</span></div>
+                                <p class="text-2xl font-bold brand-text-cyan"><$<span class="counter-kpi" data-target="150">0</span></p>
+                            </div>
+                            <div class="stat-card text-sm" data-tippy-content="Student satisfaction and likelihood to recommend.">
+                                <div class="icon-text mb-1"><i data-lucide="thumbs-up" class="w-5 h-5 text-indigo-500"></i><span class="font-semibold text-slate-700">Net Promoter Score (NPS)</span></div>
+                                <p class="text-2xl font-bold brand-text-cyan counter-kpi" data-target="50">0+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Call to Action -->
+        <section id="action" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-sky-100 to-blue-100">
+            <div class="container mx-auto text-center" data-aos="zoom-in-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-800 mb-6">Ready to Transform Your Entrepreneurial Journey with AI?</h2>
+                <p class="text-lg text-slate-600 max-w-xl mx-auto mb-10">
+                    Stop dreaming, start building. Vince Tan's AI Entrepreneurship Masterclass is your launchpad.
+                </p>
+                <button id="finalCtaButton" class="bg-blue-600 text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-blue-700 transition duration-300 transform hover:scale-105 shadow-xl">
+                    Claim Your FREE Preview Spot Now! <i data-lucide="rocket" class="inline w-6 h-6 ml-2"></i>
+                </button>
+                <p class="mt-6 text-sm text-slate-500">Questions? Contact us at <a href="mailto:support@vincetanmasterclass.com" class="text-blue-600 hover:underline">support@vincetanmasterclass.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 bg-slate-800 text-center">
+        <p class="text-sm text-slate-400">
+            Developed by <a href="#" class="font-semibold text-sky-400 hover:text-sky-300">My Ads Vantage (MAV)</a> – AI Marketing that Sells For You.
+        </p>
+        <p class="text-xs text-slate-500 mt-1">Infographic for Vince Tan - AI Entrepreneurship Masterclass. June 15, 2025.</p>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Tippy.js (Tooltips) -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Initialize Notyf
+        const notyf = new Notyf({
+            duration: 3000,
+            position: { x: 'right', y: 'top' },
+            types: [
+                { type: 'success', background: '#10B981', icon: { className: 'notyf__icon--success', tagName: 'i' } }, // emerald-500
+                { type: 'info', background: '#3B82F6', icon: { className: 'notyf__icon--info', tagName: 'i' } } // blue-500
+            ]
+        });
+        
+        // Initialize Tippy.js
+        tippy('[data-tippy-content]', {
+            animation: 'scale-subtle', // 'shift-away', 'scale', 'perspective'
+            theme: 'light-border', // 'light', 'material', 'translucent'
+        });
+
+        // Smooth Scrolling for Nav Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Toggle icon
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.setAttribute('data-lucide', 'menu');
+            } else {
+                icon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons(); // Re-render icons
+        });
+
+        // Animated Counters
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the slower
+
+        const animateCounter = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const isFloat = counter.getAttribute('data-target').includes('.');
+            
+            const inc = target / speed;
+
+            if (count < target) {
+                let newValue;
+                if (isFloat) {
+                    newValue = Math.ceil((count + inc) * 10) / 10; // Handle one decimal place
+                    if (newValue > target) newValue = target; // Ensure it doesn't exceed target
+                    counter.innerText = newValue.toFixed(1);
+                } else {
+                    newValue = Math.ceil(count + inc);
+                    if (newValue > target) newValue = target;
+                    counter.innerText = newValue;
+                }
+                setTimeout(() => animateCounter(counter), 10);
+            } else {
+                counter.innerText = isFloat ? target.toFixed(1) : target;
+            }
+        };
+        
+        // Intersection Observer for counters
+        const observerOptions = {
+            root: null,
+            threshold: 0.5 // Trigger when 50% of the element is visible
+        };
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, observerOptions);
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+        
+        // KPI Counters (can use a different class or re-use observer if logic is same)
+        const kpiCounters = document.querySelectorAll('.counter-kpi');
+         kpiCounters.forEach(counter => {
+            counterObserver.observe(counter); // Re-use the same observer
+        });
+
+
+        // Radar Chart (Competitive Arena)
+        const radarCtx = document.getElementById('radarChart')?.getContext('2d');
+        if (radarCtx) {
+            new Chart(radarCtx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Instructor Credibility',
+                        'Practicality & Actionability',
+                        'Depth of AI Tool Integration',
+                        'Zero Capital Methods',
+                        'Investor Pitching & Funding',
+                        'Concrete Business Models',
+                        'Community & Networking',
+                        'Price & Value',
+                        'Hands-on Support',
+                        'Brand Reputation'
+                    ],
+                    datasets: [
+                        {
+                            label: "AI Entrepreneurship Masterclass (Vince Tan)",
+                            data: [4, 5, 4, 5, 5, 5, 4, 3, 3.5, 3],
+                            fill: true,
+                            backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                            borderColor: 'rgb(37, 99, 235)',
+                            pointBackgroundColor: 'rgb(37, 99, 235)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgb(37, 99, 235)'
+                        },
+                        {
+                            label: 'Competitor A (General Udemy AI Course)',
+                            data: [2.5, 3, 3, 1.5, 1, 0.5, 1.5, 4.5, 1.5, 3.5],
+                            fill: true,
+                            backgroundColor: 'rgba(203, 213, 225, 0.2)',
+                            borderColor: 'rgb(100, 116, 139)',
+                            pointBackgroundColor: 'rgb(100, 116, 139)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgb(100, 116, 139)'
+                        },
+                        {
+                            label: 'Competitor B (Academic AI Biz Cert.)',
+                            data: [4, 2.5, 2, 1, 1.5, 0, 2.5, 2.5, 2.5, 4.5],
+                            fill: true,
+                            backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                            borderColor: 'rgb(5, 150, 105)',
+                            pointBackgroundColor: 'rgb(5, 150, 105)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgb(5, 150, 105)'
+                        },
+                        {
+                            label: 'Competitor C (Free AI Tool Webinar)',
+                            data: [2.5, 3, 4, 1, 0, 0, 0.5, 5, 1, 2.5],
+                            fill: true,
+                            backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                            borderColor: 'rgb(217, 119, 6)',
+                            pointBackgroundColor: 'rgb(217, 119, 6)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgb(217, 119, 6)'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    elements: {
+                        line: {
+                            borderWidth: 3
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 5,
+                            pointLabels: { font: { size: 12 } },
+                            ticks: { backdropColor: 'transparent', stepSize: 1}
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.r !== null) {
+                                        label += context.parsed.r;
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // SweetAlert2 for CTAs
+        const promoOfferButton = document.getElementById('promoOfferButton');
+        if (promoOfferButton) {
+            promoOfferButton.addEventListener('click', () => {
+                Swal.fire({
+                    title: 'Free Preview Registration!',
+                    html: `
+                        <p class="text-slate-600 mb-4">You're one step closer to unlocking AI entrepreneurship secrets.</p>
+                        <input type="email" id="swal-email" class="swal2-input" placeholder="Enter your email">
+                    `,
+                    icon: 'info',
+                    confirmButtonText: 'Register for Free Preview <i class="fas fa-arrow-right"></i>', // Font Awesome icon, needs library
+                    confirmButtonColor: '#8B5CF6', // purple-500
+                    showCancelButton: true,
+                    cancelButtonText: 'Maybe later',
+                    focusConfirm: false,
+                    preConfirm: () => {
+                        const email = Swal.getPopup().querySelector('#swal-email').value;
+                        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                            Swal.showValidationMessage(`Please enter a valid email address`);
+                        }
+                        return { email: email };
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Registered!',
+                            `We've sent preview details to ${result.value.email}. Check your inbox!`,
+                            'success'
+                        );
+                        // Here you would typically send the email to your backend
+                    }
+                });
+            });
+        }
+        
+        const finalCtaButton = document.getElementById('finalCtaButton');
+        if (finalCtaButton) {
+            finalCtaButton.addEventListener('click', () => {
+                 Swal.fire({
+                    title: 'Awesome!',
+                    text: "You're about to join the AI Entrepreneurship Masterclass Free Preview. Enter your email to get started!",
+                    icon: 'success',
+                    input: 'email',
+                    inputPlaceholder: 'Enter your email address',
+                    confirmButtonText: 'Sign Me Up!',
+                    confirmButtonColor: '#2563EB', // blue-600
+                    showCancelButton: true,
+                    inputValidator: (value) => {
+                        if (!value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                            return 'Please enter a valid email address!'
+                        }
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Welcome Aboard!',
+                            `Confirmation sent to ${result.value}. We're excited to see you!`,
+                            'success'
+                        );
+                        // In a real app, this would submit the form/data.
+                    }
+                });
+            });
+        }
+        
+    </script>
+</body>
+</html>
