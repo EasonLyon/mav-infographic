@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyson Foods Malaysia: Market Opportunity Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #1976D2;
+            width: 40px;
+            height: 40px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#0D47A1] uppercase tracking-wide">The Crunch Opportunity</h1>
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1976D2] mt-2">Market Analysis & Strategy for Tyson Foods Malaysia</h2>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">A visual deep-dive into the Malaysian frozen poultry market, revealing a clear path for growth driven by convenience, taste, and trust.</p>
+        </header>
+
+        <section id="market-trends" class="mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-[#0D47A1] mb-4">A Market on the Rise</h3>
+                    <p class="text-gray-700 mb-6">The Malaysian frozen food sector is experiencing significant growth. Busy lifestyles and the demand for quick meal solutions are fueling a consistent upward trend, making it a prime market for convenient, high-quality protein products.</p>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="marketGrowthChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-[#0D47A1] mb-4">The Key Purchase Drivers</h3>
+                    <p class="text-gray-700 mb-6">What truly motivates a purchase? Our analysis shows two non-negotiable factors dominate consumer decisions in this category: ultimate convenience and unwavering trust in Halal certification.</p>
+                     <div class="chart-container h-64 md:h-80">
+                        <canvas id="purchaseDriversChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="competitive-landscape" class="mb-12">
+             <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 md:col-span-2">
+                <h3 class="text-3xl font-bold text-center text-[#0D47A1] mb-2">The Competitive Arena</h3>
+                <p class="text-center text-gray-700 mb-6 max-w-2xl mx-auto">While the market is crowded with strong local and regional players, a significant opportunity exists. This value curve analysis shows where Tyson can create a unique and winning position.</p>
+                <div class="chart-container h-80 md:h-[450px] max-w-3xl">
+                    <canvas id="valueCurveChart"></canvas>
+                </div>
+                <p class="text-center text-gray-700 mt-6 font-semibold">Tyson's clear advantage lies in delivering an <span class="text-[#FFC107] font-bold">Authentic International Flavour</span> and <span class="text-[#FFC107] font-bold">Brand Prestige</span> that local competitors can't match, justifying a premium position.</p>
+            </div>
+        </section>
+        
+        <section id="consumer-voice" class="mb-12">
+             <h3 class="text-3xl font-bold text-center text-[#0D47A1] mb-6">The Voice of the Consumer</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <p class="text-6xl mb-2">⏰</p>
+                    <h4 class="text-xl font-bold text-[#1976D2]">"Cepat & Senang"</h4>
+                    <p class="text-gray-600 mt-2">"Tired after work... luckily there's frozen food, just toss it in the air fryer for 15 mins and it's done."</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                     <p class="text-6xl mb-2">👨‍👩‍👧‍👦</p>
+                    <h4 class="text-xl font-bold text-[#1976D2]">"Anak Suka"</h4>
+                    <p class="text-gray-600 mt-2">"My kids only want to eat nuggets. At least with this brand, the chicken feels more real."</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <p class="text-6xl mb-2">😋</p>
+                    <h4 class="text-xl font-bold text-[#1976D2]">"Rasa Macam Restoran"</h4>
+                    <p class="text-gray-600 mt-2">"Delicious! Tastes like eating at a fast-food restaurant."</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="target-persona" class="mb-12">
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="md:col-span-1 text-center">
+                        <div class="w-48 h-48 bg-[#1976D2] rounded-full mx-auto flex items-center justify-center">
+                            <span class="text-7xl text-white">👩‍💼</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-[#0D47A1] mt-4">Puan Sarah</h3>
+                        <p class="text-xl text-gray-600">The Multitasking Mum</p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <h4 class="text-2xl font-bold text-[#0D47A1] mb-4">Her Story</h4>
+                        <p class="text-lg text-gray-700 mb-6">A busy working professional aged 32-42 with school-aged children, living in a suburban hub. Her primary goal is to provide quick, hassle-free, and delicious meals that her entire family will enjoy after a long day.</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="font-bold text-lg text-[#1976D2]">Motivations</h5>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>Convenience (求便)</li>
+                                    <li>Safety & Trust (求安 - Halal)</li>
+                                    <li>Seeing her kids eat happily</li>
+                                </ul>
+                            </div>
+                             <div>
+                                <h5 class="font-bold text-lg text-[#1976D2]">Pain Points</h5>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>Time scarcity and fatigue</li>
+                                    <li>The "What's for dinner?" dilemma</li>
+                                    <li>Guilt over serving processed food</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-amber-100 border-l-4 border-amber-500 text-amber-800 p-4 rounded-lg mt-6">
+                            <p><span class="font-bold">Scenario Snapshot:</span> It's 6:30 PM. Puan Sarah reaches for Tyson, and in 15 minutes, a meal that brings smiles to the table is ready. She solves the dinner rush without stress.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="usp-flowchart" class="mb-12">
+            <h3 class="text-3xl font-bold text-center text-[#0D47A1] mb-8">Crafting the Unique Selling Proposition (USP)</h3>
+            <div class="relative px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h4 class="font-bold text-[#1976D2] text-xl mb-2">Tyson's Strength</h4>
+                        <p>Authentic American recipes & global quality standard.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h4 class="font-bold text-[#1976D2] text-xl mb-2">Market Gap</h4>
+                        <p>Local competitors lack a true "international flavour" profile.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h4 class="font-bold text-[#1976D2] text-xl mb-2">Consumer Need</h4>
+                        <p>Desire for convenient, trusted, and exciting new taste experiences.</p>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center my-8">
+                    <div class="text-5xl text-[#FFC107] font-black transform -rotate-90 md:rotate-0">➔</div>
+                </div>
+                <div class="bg-amber-400 text-white p-8 rounded-2xl shadow-2xl text-center">
+                    <h4 class="text-xl font-bold mb-2 uppercase tracking-wider">The Winning USP</h4>
+                    <p class="text-2xl font-semibold">"Your only choice for an authentic, restaurant-quality American fried chicken experience, guaranteed Halal and ready in minutes."</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="the-offer" class="mb-12">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="p-8 md:p-12">
+                    <h3 class="text-3xl font-bold text-center text-[#0D47A1] mb-2">The Hit Promotional Offer</h3>
+                    <p class="text-center text-gray-700 mb-8 max-w-2xl mx-auto">Introducing a value-packed bundle designed to be the perfect, irresistible solution for Puan Sarah's family treat night.</p>
+                    
+                    <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-2xl p-8">
+                        <h4 class="text-center text-3xl font-extrabold text-[#1976D2] mb-6">The Tyson Family Movie Night Box</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center font-semibold text-gray-800">
+                            <div class="border border-gray-200 bg-white p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl mb-2">🍗</p>
+                                1x Tyson Crispy Fried Chicken (750g)
+                            </div>
+                            <div class="border border-gray-200 bg-white p-4 rounded-lg shadow-sm">
+                                <p class="text-4xl mb-2">🐔</p>
+                                1x First Pride Nuggets (800g)
+                            </div>
+                             <div class="bg-amber-400 text-white border border-amber-500 p-4 rounded-lg shadow-lg">
+                                <p class="text-4xl mb-2">✨</p>
+                                2x Limited Edition Smokey BBQ Sauce
+                            </div>
+                        </div>
+                         <div class="text-center mt-8">
+                            <p class="text-gray-600 line-through">Total Value: RM52.00</p>
+                            <p class="text-4xl font-black text-[#0D47A1]">Your Price: RM45.90</p>
+                            <p class="text-amber-600 font-bold mt-2">Limited Time Offer!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section id="viral-launch" class="mb-12">
+            <h3 class="text-3xl font-bold text-center text-[#0D47A1] mb-8">The Viral Launch Idea</h3>
+            <div class="bg-white rounded-2xl shadow-lg p-8 grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                <div class="md:col-span-2 text-center">
+                    <p class="text-8xl">🔊</p>
+                </div>
+                <div class="md:col-span-3">
+                    <h4 class="text-3xl font-extrabold text-[#1976D2]">#TysonCrunchChallenge</h4>
+                    <p class="text-lg text-gray-700 mt-4">Launch a TikTok and Instagram challenge. Users record the satisfying <span class="font-bold text-[#FFC107]">CRUNCH</span> of their first bite, tag Tyson Malaysia, and share for a chance to win prizes like a new air fryer.
+                    </p>
+                    <p class="text-lg text-gray-700 mt-4 font-semibold">This strategy generates massive, authentic user content, provides compelling social proof, and directly highlights the product's superior texture.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-strategy-zone" class="mb-12">
+            <div class="bg-gradient-to-br from-[#0D47A1] to-[#1976D2] rounded-2xl shadow-2xl p-8 md:p-12 text-white">
+                <h3 class="text-4xl font-black text-center text-white mb-2">✨ AI-Powered Strategy Zone</h3>
+                <p class="text-center text-blue-200 mb-10 max-w-2xl mx-auto">Go from insight to action. Use the power of AI to generate creative marketing and product ideas instantly.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- AI Slogan Generator -->
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                        <h4 class="text-2xl font-bold text-amber-300 mb-4">AI Slogan Generator</h4>
+                        <p class="mb-4 text-blue-100">Generate catchy slogans based on our USP, targeting "Puan Sarah".</p>
+                        <button id="generateSlogansBtn" class="bg-amber-400 hover:bg-amber-500 text-[#0D47A1] font-bold py-2 px-4 rounded-lg w-full transition-transform transform hover:scale-105">✨ Generate Slogan Ideas</button>
+                        <div id="sloganLoader" class="hidden mx-auto mt-4 loader"></div>
+                        <div id="slogansResult" class="mt-4 text-left"></div>
+                    </div>
+
+                    <!-- AI Flavour Idea Generator -->
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                        <h4 class="text-2xl font-bold text-amber-300 mb-4">AI Flavour Idea Generator</h4>
+                        <p class="mb-4 text-blue-100">Brainstorm innovative new chicken flavours for the Malaysian market.</p>
+                        <button id="generateFlavoursBtn" class="bg-amber-400 hover:bg-amber-500 text-[#0D47A1] font-bold py-2 px-4 rounded-lg w-full transition-transform transform hover:scale-105">✨ Suggest New Flavours</button>
+                         <div id="flavourLoader" class="hidden mx-auto mt-4 loader"></div>
+                        <div id="flavoursResult" class="mt-4 text-left"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+<script>
+function wrapLabel(label, maxWidth) {
+    if (typeof label !== 'string' || label.length <= maxWidth) {
+        return label;
+    }
+    const words = label.split(' ');
+    const lines = [];
+    let currentLine = '';
+    for (const word of words) {
+        if ((currentLine + word).length > maxWidth && currentLine.length > 0) {
+            lines.push(currentLine.trim());
+            currentLine = '';
+        }
+        currentLine += word + ' ';
+    }
+    lines.push(currentLine.trim());
+    return lines;
+}
+
+const tooltipTitleCallback = (tooltipItems) => {
+    const item = tooltipItems[0];
+    if (!item) return '';
+    let label = item.chart.data.labels[item.dataIndex];
+    return Array.isArray(label) ? label.join(' ') : label;
+};
+
+const sharedChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+        legend: {
+            labels: {
+                font: {
+                    family: 'Inter',
+                    size: 14,
+                },
+                color: '#212121'
+            }
+        },
+        tooltip: {
+            callbacks: {
+                title: tooltipTitleCallback
+            },
+            bodyFont: {
+                family: 'Inter'
+            },
+            titleFont: {
+                family: 'Inter'
+            }
+        }
+    },
+    scales: {
+        y: {
+            ticks: {
+                color: '#212121',
+                 font: { family: 'Inter' }
+            },
+            grid: {
+                color: '#e0e0e0'
+            }
+        },
+        x: {
+            ticks: {
+                color: '#212121',
+                 font: { family: 'Inter' }
+            },
+             grid: {
+                display: false
+            }
+        }
+    }
+};
+
+const marketGrowthCtx = document.getElementById('marketGrowthChart').getContext('2d');
+new Chart(marketGrowthCtx, {
+    type: 'line',
+    data: {
+        labels: ['2022', '2023', '2024', '2025 (Proj.)', '2026 (Proj.)'],
+        datasets: [{
+            label: 'Frozen Food Market Growth',
+            data: [100, 115, 130, 148, 165],
+            borderColor: '#1976D2',
+            backgroundColor: 'rgba(25, 118, 210, 0.1)',
+            fill: true,
+            tension: 0.4,
+            borderWidth: 3
+        }]
+    },
+    options: sharedChartOptions
+});
+
+
+const purchaseDriversCtx = document.getElementById('purchaseDriversChart').getContext('2d');
+new Chart(purchaseDriversCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Convenience (Cepat & Senang)', 'Halal Certification', 'Taste & Flavour', 'Price & Value'],
+        datasets: [{
+            label: 'Key Purchase Drivers',
+            data: [45, 35, 15, 5],
+            backgroundColor: [
+                '#1976D2',
+                '#0D47A1',
+                '#FFC107',
+                '#F5F5F5'
+            ],
+            borderColor: '#FFFFFF',
+            borderWidth: 4
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: {
+                     font: { family: 'Inter', size: 12 },
+                     color: '#212121',
+                     boxWidth: 20,
+                     padding: 20,
+                     generateLabels: function(chart) {
+                        const data = chart.data;
+                        if (data.labels.length && data.datasets.length) {
+                            return data.labels.map(function(label, i) {
+                                const meta = chart.getDatasetMeta(0);
+                                const style = meta.controller.getStyle(i);
+                                const unwrappedLabel = Array.isArray(label) ? label.join(' ') : label;
+                                return {
+                                    text: unwrappedLabel,
+                                    fillStyle: style.backgroundColor,
+                                    strokeStyle: style.borderColor,
+                                    lineWidth: style.borderWidth,
+                                    hidden: isNaN(data.datasets[0].data[i]) || meta.data[i].hidden,
+                                    index: i
+                                };
+                            });
+                        }
+                        return [];
+                    }
+                }
+            },
+            tooltip: {
+                callbacks: {
+                     title: tooltipTitleCallback
+                },
+                 bodyFont: { family: 'Inter' },
+                 titleFont: { family: 'Inter' }
+            },
+            title: {
+                 display: false
+            }
+        }
+    }
+});
+
+
+const valueCurveCtx = document.getElementById('valueCurveChart').getContext('2d');
+new Chart(valueCurveCtx, {
+    type: 'radar',
+    data: {
+        labels: [
+            'Price', 
+            wrapLabel('Halal Trust', 16), 
+            wrapLabel('Local Taste Profile', 16), 
+            'Convenience', 
+            wrapLabel('Kid Friendliness', 16), 
+            wrapLabel('Authentic Int\'l Flavour', 16), 
+            wrapLabel('Brand Prestige', 16)
+        ],
+        datasets: [{
+            label: 'Tyson',
+            data: [7, 8, 3, 9, 9, 10, 9],
+            borderColor: '#FFC107',
+            backgroundColor: 'rgba(255, 193, 7, 0.2)',
+            borderWidth: 3,
+            pointBackgroundColor: '#FFC107',
+            pointRadius: 5,
+        }, {
+            label: 'Ayamas',
+            data: [6, 10, 9, 8, 8, 3, 6],
+            borderColor: '#0D47A1',
+            backgroundColor: 'rgba(13, 71, 161, 0.2)',
+            borderWidth: 2,
+            pointBackgroundColor: '#0D47A1',
+            pointRadius: 5,
+        },
+        {
+            label: 'Ramly',
+            data: [4, 10, 10, 8, 7, 2, 5],
+            borderColor: '#1976D2',
+            backgroundColor: 'rgba(25, 118, 210, 0.2)',
+            borderWidth: 2,
+            pointBackgroundColor: '#1976D2',
+            pointRadius: 5,
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: tooltipTitleCallback
+                },
+                 bodyFont: { family: 'Inter' },
+                 titleFont: { family: 'Inter' }
+            },
+            legend: {
+                position: 'top',
+                 labels: {
+                     font: { family: 'Inter', size: 14 },
+                     color: '#212121'
+                 }
+            }
+        },
+        scales: {
+            r: {
+                angleLines: {
+                    color: '#e0e0e0'
+                },
+                grid: {
+                    color: '#e0e0e0'
+                },
+                pointLabels: {
+                    font: {
+                        size: 12,
+                        weight: 'bold',
+                         font: { family: 'Inter' }
+                    },
+                     color: '#212121'
+                },
+                ticks: {
+                    backdropColor: 'rgba(255, 255, 255, 0.75)',
+                    color: '#424242',
+                    stepSize: 2
+                },
+                 suggestedMin: 0,
+                 suggestedMax: 10
+            }
+        }
+    }
+});
+
+
+// Gemini API Integration
+const generateSlogansBtn = document.getElementById('generateSlogansBtn');
+const sloganLoader = document.getElementById('sloganLoader');
+const slogansResult = document.getElementById('slogansResult');
+
+const generateFlavoursBtn = document.getElementById('generateFlavoursBtn');
+const flavourLoader = document.getElementById('flavourLoader');
+const flavoursResult = document.getElementById('flavoursResult');
+
+const apiKey = ""; // API Key will be injected by the environment
+
+async function callGemini(prompt) {
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+    
+    const payload = {
+      contents: [{
+        parts: [{
+          text: prompt
+        }]
+      }]
+    };
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        if (result.candidates && result.candidates.length > 0 &&
+              result.candidates[0].content && result.candidates[0].content.parts &&
+              result.candidates[0].content.parts.length > 0) {
+            return result.candidates[0].content.parts[0].text;
+        } else {
+            console.error('Unexpected API response structure:', result);
+            return 'Sorry, I could not generate a response. The API returned an unexpected result.';
+        }
+    } catch (error) {
+        console.error('Error calling Gemini API:', error);
+        return `An error occurred: ${error.message}. Please check the console for more details.`;
+    }
+}
+
+
+generateSlogansBtn.addEventListener('click', async () => {
+    slogansResult.innerHTML = '';
+    sloganLoader.classList.remove('hidden');
+    generateSlogansBtn.disabled = true;
+
+    const prompt = `
+        You are a marketing expert for Tyson Foods Malaysia.
+        Your target audience is "Puan Sarah", a busy, multitasking Malaysian mum who wants convenient, Halal, and delicious meals her kids will love.
+        Our Unique Selling Proposition (USP) is: "Authentic, restaurant-quality American fried chicken experience, guaranteed Halal and ready in minutes."
+
+        Generate 5 creative, catchy, and persuasive advertising slogans. Provide a mix of English and Malay slogans. The slogans should be short and memorable.
+        Format the output as a simple list. For example:
+        1. Slogan one.
+        2. Slogan dua.
+    `;
+    
+    const responseText = await callGemini(prompt);
+    
+    sloganLoader.classList.add('hidden');
+    generateSlogansBtn.disabled = false;
+
+    const slogans = responseText.split('\n').filter(s => s.length > 0);
+    let html = '<ul class="space-y-2 list-disc list-inside text-white">';
+    slogans.forEach(slogan => {
+        html += `<li class="p-2 bg-white/10 rounded-md">${slogan.replace(/^\d+\.\s*/, '')}</li>`;
+    });
+    html += '</ul>';
+    slogansResult.innerHTML = html;
+});
+
+
+generateFlavoursBtn.addEventListener('click', async () => {
+    flavoursResult.innerHTML = '';
+    flavourLoader.classList.remove('hidden');
+    generateFlavoursBtn.disabled = true;
+
+    const prompt = `
+        You are a product development expert for Tyson Foods, specializing in the Southeast Asian market.
+        Based on the insight that Malaysian consumers appreciate flavour innovation, suggest THREE (3) new, exciting frozen chicken product flavours that would appeal to the Malaysian palate.
+        The flavours should be a fusion, combining a familiar local taste with a unique Tyson American-style twist.
+
+        For each flavour, provide:
+        - A catchy name.
+        - A brief, one-sentence description.
+
+        Format the output clearly for each flavour. For example:
+        **Flavour Name 1:** Description of the flavour.
+        **Flavour Name 2:** Description of the flavour.
+        **Flavour Name 3:** Description of the flavour.
+    `;
+    
+    const responseText = await callGemini(prompt);
+
+    flavourLoader.classList.add('hidden');
+    generateFlavoursBtn.disabled = false;
+
+    const flavourIdeas = responseText.split('**').filter(s => s.trim().length > 0);
+    let html = '<div class="space-y-3">';
+    flavourIdeas.forEach(idea => {
+        const parts = idea.split(':');
+        if (parts.length >= 2) {
+            const name = parts[0].trim();
+            const desc = parts.slice(1).join(':').trim();
+            html += `
+                <div class="p-3 bg-white/10 rounded-md">
+                    <p class="font-bold text-amber-300">${name}</p>
+                    <p class="text-sm">${desc}</p>
+                </div>`;
+        }
+    });
+    html += '</div>';
+
+    flavoursResult.innerHTML = html;
+});
+
+
+</script>
+</body>
+</html>
