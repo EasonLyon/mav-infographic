@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公司秘书服务行业报告 – 马来西亚 2024</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind gray-50 灰色 */
+            color: #1f2937; /* Tailwind gray-800 灰色 */
+        }
+        /* Custom scrollbar for a cleaner look - 自定义滚动条以获得更简洁的外观 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e5e7eb; /* Tailwind gray-200 灰色 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6; /* Tailwind blue-500 蓝色 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb; /* Tailwind blue-600 蓝色 */
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 40vh; /* Responsive height - 响应式高度 */
+            width: 80vw;  /* Responsive width - 响应式宽度 */
+            max-width: 600px;
+        }
+        .stat-card {
+            background-color: white;
+            padding: 1.5rem; /* p-6 (内边距) */
+            border-radius: 0.5rem; /* rounded-lg (圆角) */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md (阴影) */
+            transition: transform 0.3s ease-in-out;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem; /* pb-8 (下内边距) */
+            padding-left: 2.5rem; /* pl-10 (左内边距) */
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.25rem; /* top-1 (顶部) */
+            width: 1rem; /* w-4 (宽度) */
+            height: 1rem; /* h-4 (高度) */
+            background-color: #3b82f6; /* bg-blue-500 (背景蓝色) */
+            border-radius: 9999px; /* rounded-full (全圆角) */
+            z-index: 10;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 0.4375rem; /* left-[7px] (左侧) */
+            top: 0.25rem; /* top-1 (顶部) */
+            bottom: 0;
+            width: 2px;
+            background-color: #9ca3af; /* bg-gray-400 (背景灰色) */
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .section-icon {
+            color: #2563eb; /* blue-600 蓝色 */
+        }
+        .tooltip-custom {
+            background-color: #1f2937; /* gray-800 灰色 */
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+        }
+        .tab-button.active {
+            border-bottom-color: #2563eb; /* blue-600 蓝色 */
+            color: #2563eb;
+            font-weight: 600;
+        }
+        .tab-button {
+            border-bottom: 2px solid transparent;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl text-blue-600">CoSec Report</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-2 lg:space-x-4 text-sm">
+                        <a href="#executive-summary" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md font-medium">摘要</a>
+                        <a href="#industry-overview" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md font-medium">概览</a>
+                        <a href="#market-size" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md font-medium">市场规模</a>
+                        <a href="#market-segmentation" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md font-medium">市场细分</a>
+                        <a href="#competitive-landscape" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md font-medium">竞争格局</a>
+                        <a href="#trends-drivers" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md font-medium">趋势</a>
+                        <a href="#challenges-risks" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md font-medium">风险</a>
+                        <a href="#customer-analysis" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md font-medium">客户分析</a>
+                        <a href="#regulatory-environment" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md font-medium">法规环境</a>
+                        <a href="#investment-activity" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md font-medium">投资活动</a>
+                        <a href="#future-outlook" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md font-medium">未来展望</a>
+                        <a href="#action-contact" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 px-3 py-2 rounded-md font-medium">联系我们</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">打开主菜单</span>
+                        <i data-lucide="menu" class="block h-6 w-6"></i>
+                        <i data-lucide="x" class="hidden h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#executive-summary" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">摘要</a>
+                <a href="#industry-overview" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">概览</a>
+                <a href="#market-size" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">市场规模</a>
+                <a href="#market-segmentation" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">市场细分</a>
+                <a href="#competitive-landscape" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">竞争格局</a>
+                <a href="#trends-drivers" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">趋势</a>
+                <a href="#challenges-risks" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">风险</a>
+                <a href="#customer-analysis" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">客户分析</a>
+                <a href="#regulatory-environment" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">法规环境</a>
+                <a href="#investment-activity" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">投资活动</a>
+                <a href="#future-outlook" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">未来展望</a>
+                <a href="#action-contact" class="text-gray-600 hover:bg-gray-100 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 0. Executive Summary -->
+    <section id="executive-summary" class="py-16 px-4 sm:px-8 bg-blue-50 text-center">
+        <div class="container mx-auto">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-700 mb-6" data-aos="fade-down">执行摘要</h1>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-4" data-aos="fade-up">
+                马来西亚的公司秘书行业是公司治理框架的重要组成部分，受《2016年公司法》强制规定。马来西亚的每家公司都必须任命一名合格的公司秘书。
+            </p>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-4" data-aos="fade-up" data-aos-delay="100">
+                企业秘书服务市场（新加坡、马来西亚、中国合并计算）在2023年价值<strong class="text-blue-600">18.4694亿美元</strong>，预计到2032年将增长至<strong class="text-blue-600">32.4441亿美元</strong>，<strong class="text-blue-600" data-tippy-content="复合年增长率">CAGR为6.5%</strong>。主要驱动因素包括法规复杂性、初创企业数量增加以及全球化对稳健治理的需求。
+            </p>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                该角色已从行政管理演变为战略咨询，涵盖法律合规、公司治理和ESG指导。增长机会在于专业咨询、技术运用以及满足外国投资的需求。
+            </p>
+        </div>
+    </section>
+
+    <!-- 1. Industry Overview -->
+    <section id="industry-overview" class="py-16 px-4 sm:px-8 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-down">
+                <i data-lucide="building-2" class="inline-block section-icon mr-2"></i>行业概览
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">A. 行业定义</h3>
+                    <p class="text-gray-700 mb-4">
+                        马来西亚的公司秘书行业由专业人士和公司组成，他们提供《2016年公司法》规定并由马来西亚公司委员会 (SSM) 监管的服务。公司秘书确保公司遵守法律要求，就治理问题提供建议，维护记录并促进沟通。
+                    </p>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <h4 class="font-semibold text-gray-700 mb-2">主要分类：</h4>
+                        <p class="text-sm text-gray-600"><strong data-tippy-content="North American Industry Classification System (北美行业分类系统)">NAICS 代码（等效）：</strong> 541110 (律师), 541219 (会计), 541611 (咨询)</p>
+                        <p class="text-sm text-gray-600"><strong data-tippy-content="Standard Industrial Classification (标准产业分类)">SIC 代码（等效）：</strong> 8111 (法律), 8721 (会计), 8742 (咨询)</p>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">B. 历史背景与演变</h3>
+                    <div class="space-y-4">
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-gray-700">早期（1965年前）</h4>
+                            <p class="text-sm text-gray-600">受英国殖民法律影响。</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-gray-700">1965年公司法</h4>
+                            <p class="text-sm text-gray-600">正式确立框架，主要为行政职能。</p>
+                        </div>
+                         <div class="timeline-item">
+                            <h4 class="font-semibold text-gray-700">专业认可度提高（1990年代）</h4>
+                            <p class="text-sm text-gray-600">MAICSA 获得认可；关注 CPD。</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-gray-700">2016年公司法</h4>
+                            <p class="text-sm text-gray-600">法律现代化，公司秘书 (CoSec) 职责扩大。</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-gray-700">角色演变（2000年代至今）</h4>
+                            <p class="text-sm text-gray-600">转向战略顾问，关注 ESG，数字化。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-6 text-center">C. 行业价值链 / 生态系统</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Value Chain Item Example -->
+                    <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <div class="flex items-center text-blue-500 mb-3">
+                            <i data-lucide="landmark" class="w-8 h-8 mr-3"></i>
+                            <h4 class="font-semibold text-xl">监管机构</h4>
+                        </div>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>马来西亚公司委员会 (SSM)</li>
+                            <li>马来西亚交易所 (Bursa Malaysia)（针对上市公司 PLCs）</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <div class="flex items-center text-blue-500 mb-3">
+                            <i data-lucide="users" class="w-8 h-8 mr-3"></i>
+                            <h4 class="font-semibold text-xl">专业机构</h4>
+                        </div>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>MAICSA, MACS, MIA, 马来西亚律师公会</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <div class="flex items-center text-blue-500 mb-3">
+                            <i data-lucide="briefcase" class="w-8 h-8 mr-3"></i>
+                            <h4 class="font-semibold text-xl">服务提供商</h4>
+                        </div>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>持牌个人公司秘书 (CoSecs)</li>
+                            <li>企业秘书服务公司</li>
+                            <li>会计师事务所和律师事务所</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <div class="flex items-center text-blue-500 mb-3">
+                            <i data-lucide="cpu" class="w-8 h-8 mr-3"></i>
+                            <h4 class="font-semibold text-xl">技术提供商</h4>
+                        </div>
+                        <p class="text-sm text-gray-600">合规、记录保存、电子申报软件。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <div class="flex items-center text-blue-500 mb-3">
+                            <i data-lucide="target" class="w-8 h-8 mr-3"></i>
+                            <h4 class="font-semibold text-xl">客户 / 最终用户</h4>
+                        </div>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>私人有限公司 (Sdn Bhd)、公众有限公司 (Berhad)、外国公司</li>
+                            <li>初创企业、中小型企业 (SMEs)、非营利组织</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <div class="flex items-center text-blue-500 mb-3">
+                            <i data-lucide="link" class="w-8 h-8 mr-3"></i>
+                            <h4 class="font-semibold text-xl">支持服务</h4>
+                        </div>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>法律顾问、审计师、税务代理</li>
+                            <li>金融机构</li>
+                        </ul>
+                    </div>
+                </div>
+                 <p class="text-center mt-8 text-gray-700">
+                    <strong>价值流：</strong>立法与监管 → 专业发展 → 服务提供 → 技术赋能 → 企业合规与治理。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Market Size & Growth -->
+    <section id="market-size" class="py-16 px-4 sm:px-8 bg-blue-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-down">
+                <i data-lucide="trending-up" class="inline-block section-icon mr-2"></i>市场规模与增长
+            </h2>
+            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto" data-aos="fade-up">
+                新加坡、马来西亚和中国合计数据显示显著增长。马来西亚是该区域市场的主要贡献者。
+            </p>
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="stat-card text-center" data-aos="zoom-in">
+                    <i data-lucide="dollar-sign" class="mx-auto text-cyan-500 w-12 h-12 mb-3"></i>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-1">合并市场 (2023)</h3>
+                    <p class="text-3xl font-bold text-blue-600" id="marketValue2023">0</p>
+                    <p class="text-sm text-gray-500">（新加坡、马来西亚、中国）</p>
+                </div>
+                <div class="stat-card text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <i data-lucide="bar-chart-big" class="mx-auto text-cyan-500 w-12 h-12 mb-3"></i>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-1">预计复合年增长率 (CAGR) (2024-2032)</h3>
+                    <p class="text-3xl font-bold text-blue-600" id="marketCAGR">0%</p>
+                    <p class="text-sm text-gray-500" data-tippy-content="复合年增长率">(合并区域)</p>
+                </div>
+                <div class="stat-card text-center" data-aos="zoom-in" data-aos-delay="200">
+                     <i data-lucide="line-chart" class="mx-auto text-cyan-500 w-12 h-12 mb-3"></i>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-1">合并市场 (2032年预测)</h3>
+                    <p class="text-3xl font-bold text-blue-600" id="marketValue2032">0</p>
+                     <p class="text-sm text-gray-500">（预测）</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-4 text-center">区域市场增长（新加坡、马来西亚、中国）</h3>
+                <div class="chart-container mx-auto">
+                    <canvas id="marketGrowthChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="mt-12" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-6 text-center">主要增长驱动因素</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <i data-lucide="file-cog" class="mx-auto text-blue-500 w-10 h-10 mb-2"></i>
+                        <h4 class="font-semibold text-gray-700">日益增加的法规复杂性</h4>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <i data-lucide="globe" class="mx-auto text-blue-500 w-10 h-10 mb-2"></i>
+                        <h4 class="font-semibold text-gray-700">全球化与外国投资</h4>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <i data-lucide="rocket" class="mx-auto text-blue-500 w-10 h-10 mb-2"></i>
+                        <h4 class="font-semibold text-gray-700">初创企业数量增加</h4>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <i data-lucide="shield-check" class="mx-auto text-blue-500 w-10 h-10 mb-2"></i>
+                        <h4 class="font-semibold text-gray-700">对公司治理的需求</h4>
+                    </div>
+                     <div class="bg-white p-4 rounded-lg shadow">
+                        <i data-lucide="book-marked" class="mx-auto text-blue-500 w-10 h-10 mb-2"></i>
+                        <h4 class="font-semibold text-gray-700">服务的必要性</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Market Segmentation -->
+    <section id="market-segmentation" class="py-16 px-4 sm:px-8 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-down">
+                 <i data-lucide="pie-chart" class="inline-block section-icon mr-2"></i>市场细分
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4 flex items-center">
+                        <i data-lucide="box" class="mr-2"></i>A. 按产品/服务
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                        <li>公司成立与注册</li>
+                        <li>法定合规与维护（主导）</li>
+                        <li>公司治理服务与咨询</li>
+                        <li>董事会支持与会议管理</li>
+                        <li>公司重组与交易支持</li>
+                        <li>注册办事处服务</li>
+                        <li>提名服务（受监管）</li>
+                        <li>文件认证 (CTCs)</li>
+                        <li>与监管机构联络</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4 flex items-center">
+                        <i data-lucide="map-pin" class="mr-2"></i>B. 按地理区域（马来西亚境内）
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                        <li>巴生谷（吉隆坡和雪兰莪）- 最大市场</li>
+                        <li>槟城 - 工业中心</li>
+                        <li>新山 - 增长中的经济区</li>
+                        <li>其他州首府及主要城镇</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4 flex items-center">
+                        <i data-lucide="user-cog" class="mr-2"></i>C. 按客户类型
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                        <li>上市公司 (PLCs) - 增长最快</li>
+                        <li>大型私营企业</li>
+                        <li>中小型企业 (SMEs) 与初创企业（数量最多）</li>
+                        <li>外国公司与分支机构</li>
+                        <li>慈善公司 / 担保有限公司 (CLGs)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in-up">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4 text-center">服务细分示例</h3>
+                    <div class="chart-container mx-auto" style="height:300px; width:100%; max-width:400px;">
+                        <canvas id="serviceSegmentationChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4 text-center">客户类型关注示例</h3>
+                     <div class="chart-container mx-auto" style="height:300px; width:100%; max-width:400px;">
+                        <canvas id="customerTypeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Competitive Landscape -->
+    <section id="competitive-landscape" class="py-16 px-4 sm:px-8 bg-blue-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-down">
+                <i data-lucide="swords" class="inline-block section-icon mr-2"></i>竞争格局
+            </h2>
+            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto" data-aos="fade-up">
+                马来西亚市场上有大型国际公司、本地专业机构和个体执业者。竞争日益激烈，尤其是在标准服务方面。
+            </p>
+
+            <div class="mb-12" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-6 text-center">A. 主要竞争者类型与示例</h3>
+                <div class="overflow-x-auto bg-white rounded-lg shadow">
+                    <table class="w-full table-auto text-sm text-left text-gray-600">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">类型</th>
+                                <th scope="col" class="px-6 py-3">示例</th>
+                                <th scope="col" class="px-6 py-3">专注领域</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b">
+                                <td class="px-6 py-4 font-medium text-gray-900">大型国际专业服务公司</td>
+                                <td class="px-6 py-4">PwC, Deloitte, EY, KPMG, Mazars</td>
+                                <td class="px-6 py-4">广泛服务、上市公司 (PLCs)、跨国公司 (MNCs)、复杂治理</td>
+                            </tr>
+                            <tr class="bg-gray-50 border-b">
+                                <td class="px-6 py-4 font-medium text-gray-900">成熟的本地/区域企业服务提供商</td>
+                                <td class="px-6 py-4">BoardRoom, Tricor, RDL, ShineWing TY Teoh, Altomate</td>
+                                <td class="px-6 py-4">全面的公司秘书 (CoSec) 服务、ESG、数字化转型</td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="px-6 py-4 font-medium text-gray-900">公司秘书 (CoSec) 软件提供商</td>
+                                <td class="px-6 py-4">ARB Berhad (ARB Cloud Cosec)</td>
+                                <td class="px-6 py-4">云平台，为公司和中小型企业 (SMEs) 提供自动化服务</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-gray-500 mt-2 text-center">注：许多其他本地公司和个体执业者也做出了重要贡献。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4 text-center">B. 市场集中度</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong class="text-gray-800">中小型企业 (SMEs) 市场分散：</strong>许多小型公司和持牌个人秘书。</li>
+                        <li><strong class="text-gray-800">上市公司 (PLCs)/大型企业市场中度集中：</strong>由大型国际和成熟的区域性公司主导。</li>
+                        <li><strong class="text-gray-800">竞争加剧：</strong>总体而言，服务提供商面临日益激烈的竞争。</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-left">
+                     <h3 class="text-2xl font-semibold text-blue-600 mb-4 text-center">C. SWOT 总结（雷达图示例）</h3>
+                     <div class="chart-container mx-auto" style="height:300px; width:100%; max-width:400px;">
+                        <canvas id="swotRadarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-6 text-center">D. 波特五力分析</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Porter's Force Card Example -->
+                    <div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <div class="flex items-center text-blue-500 mb-2">
+                            <i data-lucide="users-round" class="w-7 h-7 mr-2"></i>
+                            <h4 class="font-semibold text-lg">新进入者威胁</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1">中到高。需要执照，但基本服务资本要求低。</p>
+                        <span class="text-xs font-semibold text-yellow-600 bg-yellow-100 px-2 py-0.5 rounded-full">中等</span>
+                    </div>
+                     <div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <div class="flex items-center text-blue-500 mb-2">
+                            <i data-lucide="handshake" class="w-7 h-7 mr-2"></i>
+                            <h4 class="font-semibold text-lg">买方议价能力</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1">中等。中小型企业 (SMEs) 对价格敏感；专业上市公司 (PLC) 需求则较少。</p>
+                        <span class="text-xs font-semibold text-yellow-600 bg-yellow-100 px-2 py-0.5 rounded-full">中等</span>
+                    </div>
+                     <div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <div class="flex items-center text-blue-500 mb-2">
+                            <i data-lucide="truck" class="w-7 h-7 mr-2"></i>
+                            <h4 class="font-semibold text-lg">供应商议价能力</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1">低到中。人才稀缺（专业人士），软件供应商。</p>
+                        <span class="text-xs font-semibold text-orange-600 bg-orange-100 px-2 py-0.5 rounded-full">中低</span>
+                    </div>
+                     <div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <div class="flex items-center text-blue-500 mb-2">
+                            <i data-lucide="recycle" class="w-7 h-7 mr-2"></i>
+                            <h4 class="font-semibold text-lg">替代品威胁</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1">低。核心服务为法律强制。技术替代的是*方式*，而非*内容*。</p>
+                        <span class="text-xs font-semibold text-green-600 bg-green-100 px-2 py-0.5 rounded-full">低</span>
+                    </div>
+                     <div class="bg-white p-5 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <div class="flex items-center text-blue-500 mb-2">
+                            <i data-lucide="sword" class="w-7 h-7 mr-2"></i>
+                            <h4 class="font-semibold text-lg">行业内竞争程度</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1">高。参与者众多，基本服务价格敏感。</p>
+                        <span class="text-xs font-semibold text-red-600 bg-red-100 px-2 py-0.5 rounded-full">高</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. Trends & Market Drivers -->
+    <section id="trends-drivers" class="py-16 px-4 sm:px-8 bg-green-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-down">
+                <i data-lucide="zap" class="inline-block section-icon mr-2"></i>趋势与市场驱动因素
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-green-700 mb-6">A. 塑造行业的关键趋势</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg shadow flex items-start space-x-3">
+                            <i data-lucide="brain" class="w-10 h-10 text-green-600 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">向战略顾问演变</h4>
+                                <p class="text-sm text-gray-600">超越行政管理，涉及治理、风险、ESG 战略。</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow flex items-start space-x-3">
+                            <i data-lucide="leaf" class="w-10 h-10 text-green-600 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">对 ESG 的关注增加</h4>
+                                <p class="text-sm text-gray-600">对 ESG 合规、报告和战略的需求。</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow flex items-start space-x-3">
+                            <i data-lucide="cloud-cog" class="w-10 h-10 text-green-600 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">数字化转型</h4>
+                                <p class="text-sm text-gray-600">云软件、自动化、人工智能 (AI)、虚拟会议。</p>
+                            </div>
+                        </div>
+                         <div class="bg-white p-4 rounded-lg shadow flex items-start space-x-3">
+                            <i data-lucide="shield-ellipsis" class="w-10 h-10 text-green-600 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">治理期望提高</h4>
+                                <p class="text-sm text-gray-600">对透明度和问责制的要求更高。</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow flex items-start space-x-3">
+                            <i data-lucide="server-cog" class="w-10 h-10 text-green-600 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">服务外包</h4>
+                                <p class="text-sm text-gray-600">中小型企业 (SMEs) 和外国公司寻求专业知识和成本效益。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold text-green-700 mb-6">B. 主要市场驱动因素</h3>
+                     <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h4 class="font-semibold text-gray-800">法规复杂性增加</h4>
+                            <p class="text-sm text-gray-600">推动对专业公司秘书 (CoSec) 合规服务的需求。</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h4 class="font-semibold text-gray-800">全球化与外国投资</h4>
+                            <p class="text-sm text-gray-600">推动市场增长，因为跨国公司 (MNCs) 需要本地专业知识。</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h4 class="font-semibold text-gray-800">初创企业和中小型企业 (SMEs) 数量增加</h4>
+                            <p class="text-sm text-gray-600">推动对基础秘书服务的需求。</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h4 class="font-semibold text-gray-800">公司治理重要性日益提高</h4>
+                            <p class="text-sm text-gray-600">增加了对熟练公司秘书 (CoSecs) 以实现问责制的需求。</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h4 class="font-semibold text-gray-800">技术进步</h4>
+                            <p class="text-sm text-gray-600">提高效率，催生新服务模式，并推动对精通技术的需求。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Challenges & Risks -->
+    <section id="challenges-risks" class="py-16 px-4 sm:px-8 bg-red-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-down">
+                <i data-lucide="alert-triangle" class="inline-block section-icon mr-2"></i>挑战与风险
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Risk Card Example -->
+                <div class="bg-white p-6 rounded-lg shadow border-l-4 border-red-600" data-aos="flip-left">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="archive" class="w-8 h-8 text-red-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-red-700">法规与合规风险</h3>
+                    </div>
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                        <li>跟上不断变化的立法（公司法、SSM 规则）。</li>
+                        <li>监管机构加强执法和处罚力度。</li>
+                        <li>跨境合规的复杂性。</li>
+                    </ul>
+                     <button onclick="showMitigation('regulatory')" class="mt-4 text-sm text-red-600 hover:text-red-800 font-semibold">查看缓解措施建议 <i data-lucide="arrow-right" class="inline w-4 h-4"></i></button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow border-l-4 border-red-600" data-aos="flip-left" data-aos-delay="100">
+                     <div class="flex items-center mb-3">
+                        <i data-lucide="link-2-off" class="w-8 h-8 text-red-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-red-700">供应链与经济风险</h3>
+                    </div>
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                        <li>熟练公司秘书 (CoSecs) 人才稀缺和保留问题。</li>
+                        <li>经济衰退影响新公司注册/并购 (M&A)。</li>
+                        <li>全球事件（如疫情）的影响。</li>
+                    </ul>
+                     <button onclick="showMitigation('economic')" class="mt-4 text-sm text-red-600 hover:text-red-800 font-semibold">查看缓解措施建议 <i data-lucide="arrow-right" class="inline w-4 h-4"></i></button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow border-l-4 border-red-600" data-aos="flip-left" data-aos-delay="200">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="target" class="w-8 h-8 text-red-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-red-700">战略风险</h3>
+                    </div>
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                        <li>激烈的市场竞争和价格压力。</li>
+                        <li>技术颠覆和采用成本。</li>
+                        <li>网络安全威胁和数据泄露。</li>
+                        <li>客户对咨询服务的期望不断演变。</li>
+                        <li>合规失误带来的声誉风险。</li>
+                    </ul>
+                    <button onclick="showMitigation('strategic')" class="mt-4 text-sm text-red-600 hover:text-red-800 font-semibold">查看缓解措施建议 <i data-lucide="arrow-right" class="inline w-4 h-4"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Customer Analysis -->
+    <section id="customer-analysis" class="py-16 px-4 sm:px-8 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-down">
+                <i data-lucide="users-2" class="inline-block section-icon mr-2"></i>客户分析
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">A. 客户细分 (B2B)</h3>
+                    <ul class="list-none space-y-3">
+                        <li class="flex items-start"><i data-lucide="building" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i><div><strong>初创企业和中小型企业 (SMEs)：</strong>基本合规、成本效益高、指导。</div></li>
+                        <li class="flex items-start"><i data-lucide="factory" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i><div><strong>大型私营公司：</strong>全面合规、复杂结构、治理咨询。</div></li>
+                        <li class="flex items-start"><i data-lucide="landmark" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i><div><strong>上市公司 (PLCs)：</strong>复杂度最高、马来西亚交易所 (Bursa) 规则、复杂的治理。</div></li>
+                        <li class="flex items-start"><i data-lucide="globe-2" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i><div><strong>外国公司和跨国公司 (MNCs)：</strong>市场准入、本地合规、跨境理解。</div></li>
+                        <li class="flex items-start"><i data-lucide="heart-handshake" class="text-blue-500 mr-2 mt-1 flex-shrink-0"></i><div><strong>非营利组织 / 担保有限公司 (CLGs)：</strong>专业法规知识。</div></li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">B. 购买行为模式</h3>
+                    <p class="text-gray-700 mb-2"><strong>触发因素：</strong>新业务、持续合规、公司行为、不满、法规变化、增长。</p>
+                    <p class="text-gray-700 mb-2"><strong>评估：</strong>推荐、专业知识、服务范围、经验、成本、响应速度、技术能力。</p>
+                    <p class="text-gray-700"><strong>决策单位：</strong>创始人（中小型企业 SMEs）、首席财务官 (CFO)/法务主管/董事会（大型企业/上市公司 PLCs）。</p>
+                </div>
+            </div>
+            
+            <div data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-6 text-center">C. 关键决策因素</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow text-center" data-tippy-content="确保所有法律和法定要求准确、按时得到满足。">
+                        <i data-lucide="check-circle" class="mx-auto text-blue-500 w-8 h-8 mb-2"></i>
+                        <p class="font-semibold">合规性与准确性</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow text-center" data-tippy-content="深入了解法律、法规和治理最佳实践。">
+                        <i data-lucide="graduation-cap" class="mx-auto text-blue-500 w-8 h-8 mb-2"></i>
+                        <p class="font-semibold">专业知识与学识</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow text-center" data-tippy-content="对中小型企业 (SMEs) 很重要；大公司可能优先考虑专业知识，但也期望物有所值。">
+                        <i data-lucide="coins" class="mx-auto text-blue-500 w-8 h-8 mb-2"></i>
+                        <p class="font-semibold">价格/成本效益</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow text-center" data-tippy-content="拥有良好业绩记录的成熟公司；信任至关重要。">
+                        <i data-lucide="award" class="mx-auto text-blue-500 w-8 h-8 mb-2"></i>
+                        <p class="font-semibold">声誉与信任</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-6 text-center">D. 客户画像示例</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="font-bold text-lg text-blue-700 mb-2">初创企业创始人</h4>
+                        <p class="text-sm text-gray-600"><strong>需求：</strong>公司注册指导、经济高效的合规服务、清晰的解释。<strong>决策因素：</strong>价格、便捷性、清晰度。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="font-bold text-lg text-blue-700 mb-2">成长型私营公司首席财务官 (CFO)</h4>
+                        <p class="text-sm text-gray-600"><strong>需求：</strong>可靠的合规性、复杂任务支持、治理建议。<strong>决策因素：</strong>专业知识、可靠性、主动建议。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="font-bold text-lg text-blue-700 mb-2">上市公司 (PLC) 法务主管</h4>
+                        <p class="text-sm text-gray-600"><strong>需求：</strong>完善的法定管理、复杂治理、并购 (M&A) 支持、ESG。<strong>决策因素：</strong>深厚的专业知识、上市公司 (PLC) 经验、战略建议。</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="font-bold text-lg text-blue-700 mb-2">跨国公司 (MNC) 国家经理</h4>
+                        <p class="text-sm text-gray-600"><strong>需求：</strong>本地法律专业知识、市场准入支持、与当局联络。<strong>决策因素：</strong>本地知识、国际经验、可靠性。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Regulatory & Policy Environment -->
+    <section id="regulatory-environment" class="py-16 px-4 sm:px-8 bg-blue-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-down">
+                <i data-lucide="scale" class="inline-block section-icon mr-2"></i>法规与政策环境
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">A. 主要国家法规</h3>
+                    <ul class="space-y-3">
+                        <li class="bg-white p-3 rounded shadow"><strong data-tippy-content="管辖公司和公司秘书 (CoSec) 角色的基石立法。">2016年公司法 (CA 2016)：</strong>规定公司秘书 (CoSec) 的任命和职责。</li>
+                        <li class="bg-white p-3 rounded shadow"><strong data-tippy-content="设立马来西亚公司委员会。">2001年SSM法案：</strong>监管公司、商业实体、公司秘书 (CoSec) 执照。</li>
+                        <li class="bg-white p-3 rounded shadow"><strong data-tippy-content="主要针对上市公司 (PLCs)，影响更广泛的治理。">马来西亚公司治理准则 (MCCG)：</strong>针对上市公司 (PLCs) 的原则。</li>
+                        <li class="bg-white p-3 rounded shadow"><strong data-tippy-content="上市公司的额外合规要求。">马来西亚交易所 (Bursa Malaysia) 上市条例：</strong>针对上市公司 (PLCs)。</li>
+                        <li class="bg-white p-3 rounded shadow"><strong data-tippy-content="2001年反洗钱、反恐怖主义融资和非法活动收益法。">AMLA：</strong>尽职调查、报告义务。</li>
+                        <li class="bg-white p-3 rounded shadow"><strong data-tippy-content="2010年个人数据保护法。">PDPA：</strong>数据保护合规。</li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">B. 合规要求的影响</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>为公司秘书 (CoSec) 服务创造持续需求。</li>
+                        <li>核心职能围绕法定遵守。</li>
+                        <li>避免处罚的关键咨询角色。</li>
+                        <li>推动持续学习和专业化（例如 ESG）的需求。</li>
+                        <li>因处罚风险而凸显角色的关键性。</li>
+                        <li>公司秘书 (CoSecs) 担任公司与监管机构之间的守门人。</li>
+                    </ul>
+                    <h3 class="text-2xl font-semibold text-blue-600 mt-6 mb-4">C. 税务/劳工/环境影响</h3>
+                     <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>税务：</strong>确保财务报表备案；维护高级管理人员/股东记录。</li>
+                        <li><strong>劳工：</strong>为雇佣政策提供治理建议；维护董事记录。</li>
+                        <li><strong>环境 (ESG)：</strong>就 ESG 披露提供建议；协助可持续发展报告。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- 9. Investment & M&A Activity -->
+    <section id="investment-activity" class="py-16 px-4 sm:px-8 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-down">
+                <i data-lucide="piggy-bank" class="inline-block section-icon mr-2"></i>投资与并购 (M&A) 活动
+            </h2>
+            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto" data-aos="fade-up">
+                公司秘书在更广泛的并购 (M&A) 中发挥重要的支持作用。投资于公司秘书 (CoSec) 技术是一个关键趋势。
+            </p>
+            <div class="mb-12" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-6 text-center">A. 近期并购 (M&A) 交易（市场活动示例）</h3>
+                <div class="overflow-x-auto bg-white rounded-lg shadow">
+                    <table class="w-full table-auto text-sm text-left text-gray-600">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">收购方 / 投资者</th>
+                                <th scope="col" class="px-6 py-3">目标 / 交易描述</th>
+                                <th scope="col" class="px-6 py-3">价值（大约）</th>
+                                <th scope="col" class="px-6 py-3">年份</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">Global Infra Partners & ADIA</td>
+                                <td class="px-6 py-4">收购马来西亚机场控股有限公司 (Malaysia Airports Holdings Bhd)</td>
+                                <td class="px-6 py-4">120亿令吉</td>
+                                <td class="px-6 py-4">2024</td>
+                            </tr>
+                            <tr class="border-b bg-gray-50">
+                                <td class="px-6 py-4">Sime Darby Bhd</td>
+                                <td class="px-6 py-4">收购合顺控股有限公司 (UMW Holdings Bhd) 股份 + 强制性全面收购 (MGO)</td>
+                                <td class="px-6 py-4">58亿令吉+</td>
+                                <td class="px-6 py-4">2024</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">NTT Data Japan Corp</td>
+                                <td class="px-6 py-4">收购并私有化 GHL Systems Bhd</td>
+                                <td class="px-6 py-4">12亿令吉</td>
+                                <td class="px-6 py-4">2024</td>
+                            </tr>
+                             <tr class="bg-gray-50">
+                                <td class="px-6 py-4">ARB Berhad</td>
+                                <td class="px-6 py-4">内部开发并推出 ARB Cloud Cosec 平台</td>
+                                <td class="px-6 py-4">预计年度经常性收入 (ARR) 1亿令吉</td>
+                                <td class="px-6 py-4">2021</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                     <p class="text-xs text-gray-500 mt-2 text-center">注：公司秘书 (CoSecs) 为此类交易提供尽职调查、文件准备和合规支持。</p>
+                </div>
+            </div>
+
+            <div data-aos="fade-up">
+                 <h3 class="text-2xl font-semibold text-blue-600 mb-6 text-center">B. 投资趋势与投资者兴趣</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="font-semibold text-gray-800 mb-2"><i data-lucide="cloud-cog" class="inline text-blue-500 mr-1"></i>技术投资</h4>
+                        <p class="text-sm text-gray-600">公司秘书 (CoSec) 软件（如 ARB Cloud Cosec）增长。云采用是全球趋势。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="font-semibold text-gray-800 mb-2"><i data-lucide="trending-up" class="inline text-blue-500 mr-1"></i>高增长行业的需求</h4>
+                        <p class="text-sm text-gray-600">服务于科技、可再生能源、跨国公司 (MNCs) 的公司因客户增长而具有吸引力。</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="font-semibold text-gray-800 mb-2"><i data-lucide="leaf" class="inline text-blue-500 mr-1"></i>ESG 咨询能力</h4>
+                        <p class="text-sm text-gray-600">拥有强大 ESG 咨询服务的公司正变得越来越有价值。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="font-semibold text-gray-800 mb-2"><i data-lucide="briefcase" class="inline text-blue-500 mr-1"></i>上市公司服务</h4>
+                        <p class="text-sm text-gray-600">针对上市公司 (PLCs) 的专业知识复杂且价值高，表明其市场定位稳固。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Future Outlook & Forecast -->
+    <section id="future-outlook" class="py-16 px-4 sm:px-8 bg-indigo-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-down">
+                <i data-lucide="bar-chart-3" class="inline-block section-icon mr-2"></i>未来展望与预测
+            </h2>
+            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto" data-aos="fade-up">
+                在法规要求、技术进步和客户期望变化的推动下，该行业有望实现发展，区域复合年增长率 (CAGR) 约为 6.5%。
+            </p>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-12" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-indigo-700 mb-4 text-center">市场预测情景（示例）</h3>
+                <div class="chart-container mx-auto">
+                    <canvas id="futureForecastChart"></canvas>
+                </div>
+                <p class="text-xs text-gray-500 mt-2 text-center">基于区域趋势的马来西亚市场增长轨迹示例。</p>
+            </div>
+            
+            <div class="mb-12" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-indigo-700 mb-6 text-center">B. 情景分析</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <h4 class="font-bold text-lg text-green-600 mb-2">最佳情景</h4>
+                        <p class="text-sm text-gray-600">经济强劲，外国直接投资 (FDI) 高，技术迅速普及，公司秘书 (CoSec) 战略角色得到认可。增长率 >7% CAGR。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow ring-2 ring-indigo-500">
+                        <h4 class="font-bold text-lg text-blue-600 mb-2">基本情景（最可能）</h4>
+                        <p class="text-sm text-gray-600">稳定增长，法规不断演变，技术持续采用，ESG 需求增长。增长率约 5.5-6.5% CAGR。</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow">
+                        <h4 class="font-bold text-lg text-red-600 mb-2">最差情景</h4>
+                        <p class="text-sm text-gray-600">经济衰退，技术采用缓慢，价格战，人才缺口扩大。增长率 <4% CAGR。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-indigo-700 mb-6 text-center">C. 战略建议</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <i data-lucide="cpu" class="text-indigo-500 w-8 h-8 mb-2"></i>
+                        <h4 class="font-semibold text-gray-700">拥抱数字化转型</h4>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <i data-lucide="trending-up" class="text-indigo-500 w-8 h-8 mb-2"></i>
+                        <h4 class="font-semibold text-gray-700">提升至战略咨询（ESG、并购 M&A）</h4>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <i data-lucide="users" class="text-indigo-500 w-8 h-8 mb-2"></i>
+                        <h4 class="font-semibold text-gray-700">投资于人才与专业化</h4>
+                    </div>
+                     <div class="bg-white p-4 rounded-lg shadow">
+                        <i data-lucide="message-circle" class="text-indigo-500 w-8 h-8 mb-2"></i>
+                        <h4 class="font-semibold text-gray-700">加强客户沟通</h4>
+                    </div>
+                     <div class="bg-white p-4 rounded-lg shadow">
+                        <i data-lucide="shield-check" class="text-indigo-500 w-8 h-8 mb-2"></i>
+                        <h4 class="font-semibold text-gray-700">关注网络安全</h4>
+                    </div>
+                     <div class="bg-white p-4 rounded-lg shadow">
+                        <i data-lucide="microscope" class="text-indigo-500 w-8 h-8 mb-2"></i>
+                        <h4 class="font-semibold text-gray-700">发展利基市场专业知识</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appendices (Conceptual - Content too long for full inclusion, using accordion) -->
+    <section id="appendices" class="py-16 px-4 sm:px-8 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-down">
+                <i data-lucide="book-open" class="inline-block section-icon mr-2"></i>附录
+            </h2>
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow" data-aos="fade-up">
+                    <button class="accordion-button w-full text-left px-6 py-4 font-semibold text-blue-700 hover:bg-blue-50 flex justify-between items-center">
+                        A. 数据表（示例）
+                        <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4 text-sm text-gray-600">
+                        <p class="mb-2"><strong>表1：新加坡、马来西亚和中国企业秘书服务市场规模与预测（百万美元）</strong></p>
+                        <p>2023年（实际）：1,846.94 | 2024年（预计）：1,957.70 | 2032年（预测）：3,244.41 (CAGR: 6.5%)</p>
+                        <p class="mt-4 mb-2"><strong>表2：全球公司秘书软件市场规模与预测（十亿美元）</strong></p>
+                        <p>2023年（实际）：5.40 | 2024年（预计）：5.71 | 2032年（预测）：8.54 (CAGR: 5.15%)</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow" data-aos="fade-up">
+                    <button class="accordion-button w-full text-left px-6 py-4 font-semibold text-blue-700 hover:bg-blue-50 flex justify-between items-center">
+                        B. 术语表
+                        <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4 text-sm text-gray-600">
+                        <ul class="list-disc list-inside space-y-1 columns-2 sm:columns-3">
+                            <li>AGM: 年度股东大会</li><li>AMLA: 反洗钱法</li><li>Bursa Malaysia: 证券交易所</li><li>CA 2016: 2016年公司法</li><li>CAGR: 复合年增长率</li><li>CoSec: 公司秘书</li><li>CPD: 持续专业发展</li><li>ESG: 环境、社会与治理</li><li>M&A: 并购</li><li>MACS: 马来西亚公司秘书协会</li><li>MAICSA: 马来西亚特许秘书与行政人员协会</li><li>MCCG: 马来西亚公司治理准则</li><li>MIA: 马来西亚会计师协会</li><li>NAICS: 北美行业分类系统</li><li>PDPA: 个人数据保护法</li><li>PLC: 上市公司</li><li>SSM: 马来西亚公司委员会</li><li>SME: 中小型企业</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow" data-aos="fade-up">
+                    <button class="accordion-button w-full text-left px-6 py-4 font-semibold text-blue-700 hover:bg-blue-50 flex justify-between items-center">
+                        C. 方法论描述
+                        <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4 text-sm text-gray-600">
+                        <p>本报告通过分析有关马来西亚公司秘书行业的公开信息和搜索结果编制而成。方法论包括：信息收集、数据提取与综合、定性分析、结构化以及定量数据呈现（在马来西亚特定数据有限的情况下使用区域/全球数据）。未进行一手调研。</p>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-lg shadow" data-aos="fade-up">
+                    <button class="accordion-button w-full text-left px-6 py-4 font-semibold text-blue-700 hover:bg-blue-50 flex justify-between items-center">
+                        D. 参考文献（部分列表）
+                        <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4 text-sm text-gray-600">
+                        <p>参考文献基于提供的搜索摘要，并指出来源，如 polarismarketresearch.com、boardroomlimited.com、PwC、MAICSA 等。完整的 URL 需要超出摘要的访问权限。文中使用了引文 [1] 至 [36]。</p>
+                        <ol class="list-decimal list-inside space-y-1 text-xs mt-2">
+                            <li>acclime.com</li>
+                            <li>polarismarketresearch.com</li>
+                            <li>boardroomlimited.com</li>
+                            <li>incorp.asia</li>
+                            <li>bac.edu.my</li>
+                            <li>altomate.io</li>
+                            <li>... (以此类推至36，代表提供的来源摘要)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action & Contact -->
+    <section id="action-contact" class="py-20 px-4 sm:px-8 bg-blue-600 text-white text-center">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-6" data-aos="zoom-in">准备好提升您的公司治理水平了吗？</h2>
+            <p class="text-lg mb-8 max-w-xl mx-auto" data-aos="zoom-in" data-aos-delay="100">
+                通过量身定制的企业秘书解决方案，获得更深入的见解和战略优势。
+            </p>
+            <div data-aos="zoom-in" data-aos-delay="200">
+                <button id="downloadReportBtn" class="bg-white text-blue-600 px-10 py-4 rounded-full text-xl font-bold hover:bg-blue-100 transition-colors duration-300 shadow-lg">
+                    下载完整报告（占位符）
+                </button>
+                <button id="contactAnalystBtn" class="mt-4 sm:mt-0 sm:ml-4 border-2 border-white text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-white hover:text-blue-600 transition-colors duration-300 shadow-lg">
+                    联系分析师
+                </button>
+            </div>
+            <div class="mt-10 text-blue-100" data-aos="fade-up" data-aos-delay="300">
+                <p>邮箱: <a href="mailto:support@myadsvantage.com" class="hover:underline">support@myadsvantage.com</a></p>
+                <p>电话: +60 3-6043 0618</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-sm text-gray-500 text-center mt-12 pb-6">
+        <p>由 My Ads Vantage (MAV) 开发 – 为您销售的人工智能 (AI) 营销。</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="hidden fixed bottom-5 right-5 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 z-50">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+
+<script>
+    // Initialize Notyf
+    const notyf = new Notyf({
+        duration: 3000,
+        position: { x: 'right', y: 'top' },
+        types: [
+            { type: 'success', background: '#2563eb', icon: false },
+            { type: 'info', background: '#3b82f6', icon: false }
+        ]
+    });
+
+    // Animated Counter Function
+    function animateValue(obj, start, end, duration, isCurrency = false, isPercentage = false) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            let currentValue = progress * (end - start) + start;
+            if (isCurrency) {
+                obj.innerHTML = `USD ${currentValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} 百万`;
+            } else if (isPercentage) {
+                 obj.innerHTML = `${currentValue.toFixed(1)}%`;
+            }
+             else { // Default for market values not explicitly currency, but are USD M
+                obj.innerHTML = `USD ${currentValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} 百万`;
+            }
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // Chart.js Initializations
+    function initCharts() {
+        // Market Size & Growth Chart
+        const marketGrowthCtx = document.getElementById('marketGrowthChart');
+        if (marketGrowthCtx) {
+            new Chart(marketGrowthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2023', '2024', '2026', '2028', '2030', '2032'],
+                    datasets: [{
+                        label: '市场规模（百万美元）',
+                        data: [1846.94, 1957.70, 2228.3, 2537.1, 2888.6, 3244.41], // Interpolated for smoother curve
+                        borderColor: '#2563eb', // blue-600
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)', // blue-500 with opacity
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: false, ticks: { callback: value => `USD ${value}百万` } } }
+                }
+            });
+        }
+
+        // Market Segmentation Charts
+        const serviceSegmentationCtx = document.getElementById('serviceSegmentationChart');
+        if (serviceSegmentationCtx) {
+            new Chart(serviceSegmentationCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['法定合规', '公司成立', '治理咨询', '董事会支持', '公司重组'],
+                    datasets: [{
+                        data: [45, 20, 20, 10, 5], // Illustrative
+                        backgroundColor: ['#2563eb', '#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe'], // Shades of blue
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+        
+        const customerTypeCtx = document.getElementById('customerTypeChart');
+        if (customerTypeCtx) {
+            new Chart(customerTypeCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['中小型企业 (SMEs) 与初创企业', '大型私营公司', '上市公司 (PLCs)', '外国公司'],
+                    datasets: [{
+                        label: '客户数量（示例）',
+                        data: [60, 25, 10, 5], // Illustrative
+                        backgroundColor: ['#2563eb', '#3b82f6', '#60a5fa', '#93c5fd'],
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y' }
+            });
+        }
+
+        // SWOT Radar Chart
+        const swotRadarCtx = document.getElementById('swotRadarChart');
+        if (swotRadarCtx) {
+            new Chart(swotRadarCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['优势', '劣势', '机会', '威胁'],
+                    datasets: [{
+                        label: '影响/级别',
+                        data: [4, 2, 5, 3], // Illustrative values 1-5
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        borderColor: '#2563eb',
+                        pointBackgroundColor: '#2563eb'
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { r: { beginAtZero: true, max: 5, stepSize: 1 } } }
+            });
+        }
+        
+        // Future Outlook Chart
+        const futureForecastCtx = document.getElementById('futureForecastChart');
+        if (futureForecastCtx) {
+            new Chart(futureForecastCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2024', '2026', '2028', '2030', '2032'],
+                    datasets: [
+                        {
+                            label: '基本情景 (6.5% CAGR)',
+                            data: [1957.70, 2228.3, 2537.1, 2888.6, 3244.41], // Derived from 6.5% CAGR
+                            borderColor: '#2563eb', // blue-600
+                            tension: 0.1,
+                            fill: false
+                        },
+                        {
+                            label: '最佳情景 (>7% CAGR)',
+                            data: [1957.70, 2280, 2650, 3080, 3580], // Illustrative
+                            borderColor: '#16a34a', // green-600
+                            tension: 0.1,
+                            fill: false,
+                            borderDash: [5, 5]
+                        },
+                        {
+                            label: '最差情景 (<4% CAGR)',
+                            data: [1957.70, 2120, 2290, 2470, 2660], // Illustrative
+                            borderColor: '#dc2626', // red-600
+                            tension: 0.1,
+                            fill: false,
+                            borderDash: [5, 5]
+                        }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: false, ticks: { callback: value => `USD ${value.toFixed(0)}百万` } } } }
+            });
+        }
+    }
+
+    // Smooth Scroll for Nav Links
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const menuButton = document.getElementById('mobile-menu-button');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuButton.querySelector('[data-lucide="menu"]').classList.remove('hidden');
+                        menuButton.querySelector('[data-lucide="x"]').classList.add('hidden');
+                    }
+                }
+            });
+        });
+    }
+
+    // Mobile Menu Toggle
+    function initMobileMenu() {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuButton.querySelector('[data-lucide="menu"]');
+        const closeIcon = menuButton.querySelector('[data-lucide="x"]');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    }
+
+    // Tippy.js Tooltips
+    function initTooltips() {
+        tippy('[data-tippy-content]', {
+            animation: 'scale-subtle',
+            theme: 'custom-dark', // You can define custom themes
+            allowHTML: true,
+            onShow(instance) {
+                instance.popper.classList.add('tooltip-custom');
+            }
+        });
+    }
+    
+    // Accordion for Appendices
+    function initAccordions() {
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.accordion-icon');
+                
+                // Close other open accordions
+                accordionButtons.forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.nextElementSibling.style.maxHeight = null;
+                        otherButton.querySelector('.accordion-icon').classList.remove('rotate-180');
+                    }
+                });
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.classList.remove('rotate-180');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+    }
+
+    // Mitigation Strategies Alert
+    function showMitigation(riskType) {
+        let title, text;
+        switch(riskType) {
+            case 'regulatory':
+                title = '法规风险缓解';
+                text = `
+                    <ul class="list-disc list-inside text-left text-sm space-y-1">
+                        <li>持续专业发展 (CPD)。</li>
+                        <li>健全的内部合规清单和审查流程。</li>
+                        <li>订阅法规更新服务。</li>
+                        <li>就变更与客户定期沟通。</li>
+                    </ul>`;
+                break;
+            case 'economic':
+                title = '经济风险缓解';
+                text = `
+                    <ul class="list-disc list-inside text-left text-sm space-y-1">
+                        <li>跨行业分散客户群。</li>
+                        <li>提供超越基本合规的增值咨询服务。</li>
+                        <li>专注于人才保留和发展计划。</li>
+                        <li>为不同客户需求提供灵活的服务包。</li>
+                    </ul>`;
+                break;
+            case 'strategic':
+                title = '战略风险缓解';
+                text = `
+                     <ul class="list-disc list-inside text-left text-sm space-y-1">
+                        <li>投资技术以提高效率和开发新服务模式。</li>
+                        <li>发展利基专业知识以实现差异化。</li>
+                        <li>实施强有力的网络安全措施和数据保护协议。</li>
+                        <li>主动调整服务产品以适应不断变化的客户期望（例如 ESG）。</li>
+                        <li>基于信任和质量建立强大的品牌声誉。</li>
+                    </ul>`;
+                break;
+            default:
+                title = '缓解措施建议';
+                text = '一般策略包括持续学习、技术采用和健全的内部流程。';
+        }
+
+        Swal.fire({
+            title: title,
+            html: text,
+            icon: 'info',
+            confirmButtonText: '知道了！',
+            confirmButtonColor: '#2563eb'
+        });
+    }
+    
+    // Back to Top Button
+    function initBackToTop() {
+        const btn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                btn.classList.remove('hidden');
+            } else {
+                btn.classList.add('hidden');
+            }
+        });
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+
+    // DOMContentLoaded Listener
+    document.addEventListener('DOMContentLoaded', () => {
+        AOS.init({ duration: 800, once: true });
+        lucide.createIcons();
+        initSmoothScroll();
+        initMobileMenu();
+        initTooltips();
+        initAccordions();
+        initBackToTop();
+        
+        // Animate stat cards
+        const marketValue2023El = document.getElementById('marketValue2023');
+        const marketCAGREl = document.getElementById('marketCAGR');
+        const marketValue2032El = document.getElementById('marketValue2032');
+
+        if (marketValue2023El) animateValue(marketValue2023El, 0, 1846.94, 2000, false); // No currency symbol needed as it's in the text
+        if (marketCAGREl) animateValue(marketCAGREl, 0, 6.5, 2000, false, true);
+        if (marketValue2032El) animateValue(marketValue2032El, 0, 3244.41, 2000, false);
+
+        initCharts(); // Initialize charts after other elements
+
+        // CTA Buttons
+        const downloadBtn = document.getElementById('downloadReportBtn');
+        if(downloadBtn) {
+            downloadBtn.addEventListener('click', () => {
+                Swal.fire({
+                    title: '即将推出！',
+                    text: '完整的可下载报告目前正在准备中。请稍后查看或联系我们。',
+                    icon: 'info',
+                    confirmButtonColor: '#2563eb',
+                    confirmButtonText: '好的'
+                });
+            });
+        }
+
+        const contactBtn = document.getElementById('contactAnalystBtn');
+        if(contactBtn) {
+            contactBtn.addEventListener('click', () => {
+                 Swal.fire({
+                    title: '联系我们',
+                    html: `
+                        <p class="text-sm text-gray-600 mb-4">如需更多信息，请联系我们：</p>
+                        <p class="text-sm text-gray-700"><strong>邮箱：</strong> support@myadsvantage.com</p>
+                        <p class="text-sm text-gray-700"><strong>电话：</strong> +60 3-6043 0618</p>
+                    `,
+                    icon: 'question',
+                    confirmButtonText: '好的',
+                    confirmButtonColor: '#2563eb'
+                });
+            });
+        }
+        
+        // Notify on load (optional)
+        // notyf.success('信息图加载成功！');
+    });
+</script>
+
+</body>
+</html>
