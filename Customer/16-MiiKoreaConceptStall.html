@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mii Korea Concept Store - Marketing Strategy Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: { // Cool Palette
+                        'brand-primary': '#2563EB', // blue-600
+                        'brand-secondary': '#22D3EE', // cyan-400
+                        'brand-text': '#1F2937', // gray-800
+                        'brand-accent': '#4B5563', // gray-600
+                        'brand-light-bg': '#EFF6FF', // blue-50 (updated to EFF6FF from F0F9FF for better match)
+                        'problem-bg': '#FEF2F2', // red-50
+                        'solution-bg': '#F0FDF4', // green-50
+                        'strategy-bg': '#FFFBEB', // yellow-50
+                        'viral-bg': '#EEF2FF', // indigo-50
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2563EB; /* brand-primary */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1D4ED8; /* darker blue */
+        }
+        /* Ensure sticky nav is above AOS animations */
+        .aos-animate {
+            z-index: 10; /* default z-index for AOS items */
+        }
+        nav#navbar { /* More specific selector for z-index */
+            z-index: 1000 !important; /* ensure nav is way above */
+        }
+        .tippy-box[data-theme~='light-border'] {
+            border-color: #2563EB; /* brand-primary for tooltip border */
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-brand-text antialiased">
+
+    <!-- 0. Navigation Bar -->
+    <nav id="navbar" class="bg-white shadow-md sticky top-0 w-full">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div>
+                    <a href="#" class="text-xl font-bold text-brand-primary">Mii Korea Strategy</a>
+                </div>
+                <div class="hidden md:block">
+                    <ul class="flex items-center space-x-1">
+                        <li><a href="#summary" class="nav-link py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Executive Summary</a></li>
+                        <li><a href="#problem" class="nav-link py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Problem</a></li>
+                        <li><a href="#solution" class="nav-link py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Solution</a></li>
+                        <li><a href="#fit-usp" class="nav-link py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Fit/USP</a></li>
+                        <li><a href="#strategy" class="nav-link py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Strategy</a></li>
+                        <li><a href="#viral-kpis" class="nav-link py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Viral/KPIs</a></li>
+                        <li><a href="#action" class="nav-link py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Action</a></li>
+                    </ul>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-brand-primary focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-2">
+                <ul class="flex flex-col space-y-1">
+                    <li><a href="#summary" class="block py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Executive Summary</a></li>
+                    <li><a href="#problem" class="block py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Problem</a></li>
+                    <li><a href="#solution" class="block py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Solution</a></li>
+                    <li><a href="#fit-usp" class="block py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Fit/USP</a></li>
+                    <li><a href="#strategy" class="block py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Strategy</a></li>
+                    <li><a href="#viral-kpis" class="block py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Viral/KPIs</a></li>
+                    <li><a href="#action" class="block py-2 px-3 text-sm font-medium text-gray-700 hover:text-brand-primary transition rounded-md">Action</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main>
+        <!-- 1. Executive Summary -->
+        <section id="summary" class="py-16 md:py-24 px-6 md:px-12 bg-brand-light-bg text-center">
+            <div class="container mx-auto">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-brand-primary mb-6" data-aos="fade-down">Mii Korea: Strategic Growth Roadmap</h1>
+                <p class="text-lg md:text-xl text-brand-text max-w-3xl mx-auto mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <strong>Problem:</strong> Malaysian youth, influenced by the Korean Wave, seek authentic, trendy K-fashion but face challenges with availability, quality, and experience.
+                </p>
+                <p class="text-lg md:text-xl text-brand-text max-w-3xl mx-auto mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <strong>Solution:</strong> Mii Korea, a trusted brand since 2011, offers an authentic Korean fashion experience with uniquely curated, modern-classic, high-quality designs in inspiring 'Instagrammable' stores and online.
+                </p>
+                <p class="text-xl md:text-2xl font-semibold text-brand-primary max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <strong>Key Takeaway:</strong> "The Curated K-Style Set" promotional offer will drive engagement and sales by providing bundled value and effortless authentic Korean style.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. Problem Identification & Market Opportunity -->
+        <section id="problem" class="py-16 md:py-24 px-6 md:px-12 bg-problem-bg">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-red-700 mb-12" data-aos="fade-down">The K-Fashion Craze: Unmet Needs</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                    <!-- Consumer Insights -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-right">
+                        <h3 class="text-xl font-semibold text-red-600 mb-3 flex items-center"><i data-lucide="users" class="w-5 h-5 mr-2"></i>Consumer Insights</h3>
+                        <ul class="list-none space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><i data-lucide="bar-chart-big" class="w-4 h-4 mr-2 mt-1 text-red-500 shrink-0"></i>Malaysian apparel market projected 10.81% growth by 2027.</li>
+                            <li class="flex items-start"><i data-lucide="waves" class="w-4 h-4 mr-2 mt-1 text-red-500 shrink-0"></i>Korean Wave (Hallyu) significantly impacts youth purchasing.</li>
+                            <li class="flex items-start"><i data-lucide="thumbs-up" class="w-4 h-4 mr-2 mt-1 text-red-500 shrink-0"></i>Desire for high quality, attractive lifestyle portrayal.</li>
+                            <li class="flex items-start"><i data-lucide="instagram" class="w-4 h-4 mr-2 mt-1 text-red-500 shrink-0"></i>Social media is a primary info source for K-products.</li>
+                            <li class="flex items-start"><i data-lucide="shopping-cart" class="w-4 h-4 mr-2 mt-1 text-red-500 shrink-0"></i>E-commerce transforms fashion retail with convenience.</li>
+                        </ul>
+                    </div>
+                    <!-- User Quotes -->
+                    <div class="space-y-4" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-red-600 mb-3 flex items-center"><i data-lucide="quote" class="w-5 h-5 mr-2"></i>Voice of the Consumer</h3>
+                        <div class="bg-white p-4 rounded-lg shadow border-l-4 border-red-500">
+                            <p class="italic text-sm text-gray-700">"Where can I find outfits like the ones in [Popular K-Drama Name]? It's so hard to find specific items locally."</p>
+                            <p class="text-xs text-gray-500 mt-1">- Aspiring K-Style Hunter</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow border-l-4 border-red-500">
+                            <p class="italic text-sm text-gray-700">"Some K-fashion online is cheap but the quality is bad. I want something stylish that actually lasts."</p>
+                            <p class="text-xs text-gray-500 mt-1">- Quality-Conscious Shopper</p>
+                        </div>
+                    </div>
+                    <!-- Market Size & Search -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-left">
+                        <h3 class="text-xl font-semibold text-red-600 mb-3 flex items-center"><i data-lucide="search" class="w-5 h-5 mr-2"></i>Seeking Solutions</h3>
+                        <p class="text-gray-700 text-sm mb-2">Top Search Queries:</p>
+                        <ul class="list-none space-y-1 text-sm text-gray-600 mb-4">
+                            <li class="flex items-center"><i data-lucide="chevron-right" class="w-3 h-3 mr-1 text-red-400"></i>"Korean fashion Malaysia"</li>
+                            <li class="flex items-center"><i data-lucide="chevron-right" class="w-3 h-3 mr-1 text-red-400"></i>"Affordable Korean clothes Malaysia"</li>
+                            <li class="flex items-center"><i data-lucide="chevron-right" class="w-3 h-3 mr-1 text-red-400"></i>"Latest Korean fashion trends 2025"</li>
+                            <li class="flex items-center"><i data-lucide="chevron-right" class="w-3 h-3 mr-1 text-red-400"></i>"Kpop inspired outfits Malaysia"</li>
+                        </ul>
+                        <div class="bg-red-100 p-4 rounded-md text-center">
+                            <p class="text-sm text-red-700">Malaysian Apparel Market Growth</p>
+                            <p class="text-3xl font-bold text-red-600">10.81%</p>
+                            <p class="text-xs text-red-700">CAGR by 2027</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Solution & Competitive Landscape -->
+        <section id="solution" class="py-16 md:py-24 px-6 md:px-12 bg-solution-bg">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-green-700 mb-12" data-aos="fade-down">Mii Korea: The Authentic K-Fashion Destination</h2>
+                <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                    <!-- Competitor Table -->
+                    <div data-aos="fade-right">
+                        <h3 class="text-xl font-semibold text-green-600 mb-4 flex items-center"><i data-lucide="swords" class="w-5 h-5 mr-2"></i>Competitor Snapshot</h3>
+                        <div class="overflow-x-auto bg-white rounded-lg shadow">
+                            <table class="w-full text-sm text-left text-gray-700">
+                                <thead class="text-xs text-green-700 uppercase bg-green-100">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-3">Competitor</th>
+                                        <th scope="col" class="px-4 py-3">Positioning</th>
+                                        <th scope="col" class="px-4 py-3">Key Features</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b hover:bg-green-50">
+                                        <td class="px-4 py-2 font-medium">OUTPOZT</td>
+                                        <td class="px-4 py-2">Trendy, Instagrammable</td>
+                                        <td class="px-4 py-2">Latest K-fashion, minimalist interior</td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-green-50">
+                                        <td class="px-4 py-2 font-medium">Global Online Retailers</td>
+                                        <td class="px-4 py-2">Wide selection, direct</td>
+                                        <td class="px-4 py-2">Extensive range, direct from Korea</td>
+                                    </tr>
+                                    <tr class="hover:bg-green-50">
+                                        <td class="px-4 py-2 font-medium">Fast Fashion Chains</td>
+                                        <td class="px-4 py-2">Affordable, quick trends</td>
+                                        <td class="px-4 py-2">Low price, K-inspired items</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- FAB Table -->
+                    <div data-aos="fade-left">
+                        <h3 class="text-xl font-semibold text-green-600 mb-4 flex items-center"><i data-lucide="star" class="w-5 h-5 mr-2"></i>Mii Korea's Value Proposition (FAB)</h3>
+                        <div class="space-y-3">
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <p class="font-semibold text-green-700">F: Curated "unique designs" with modern-classic K-aesthetic.</p>
+                                <p class="text-xs text-gray-600"><strong class="text-green-600">A:</strong> Distinctive styles, fashionable longer. <strong class="text-green-600">B:</strong> Trendy yet wearable K-fashion expression, timeless pieces.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <p class="font-semibold text-green-700">F: Use of "comfortable" and "timeless fabrics."</p>
+                                <p class="text-xs text-gray-600"><strong class="text-green-600">A:</strong> Pleasant to wear, durable for Malaysian weather. <strong class="text-green-600">B:</strong> All-day comfort, confidence, better value.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <p class="font-semibold text-green-700">F: "Instagrammable" stores with pastel decor.</p>
+                                <p class="text-xs text-gray-600"><strong class="text-green-600">A:</strong> Immersive, delightful, shareable experience. <strong class="text-green-600">B:</strong> Enhances K-culture engagement, aesthetically pleasing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Radar Chart -->
+                <div class="bg-white p-6 rounded-lg shadow-xl" data-aos="zoom-in-up">
+                    <h3 class="text-xl font-semibold text-green-600 mb-4 text-center flex items-center justify-center"><i data-lucide="radar" class="w-5 h-5 mr-2"></i>Competitive Arena Value Curve</h3>
+                    <div class="relative h-[300px] md:h-[400px]">
+                        <canvas id="competitorRadarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Problem-Solution Fit & Unique Value Proposition -->
+        <section id="fit-usp" class="py-16 md:py-24 px-6 md:px-12 bg-brand-light-bg">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-primary mb-12" data-aos="fade-down">The Perfect Fit: Mii Korea's Unique Edge</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center mb-10">
+                    <!-- Target Persona -->
+                    <div class="bg-white p-6 rounded-lg shadow-xl flex flex-col items-center text-center md:flex-row md:text-left md:items-start space-y-4 md:space-y-0 md:space-x-6" data-aos="fade-right">
+                        <div class="shrink-0">
+                            <div class="w-32 h-32 rounded-full bg-brand-secondary flex items-center justify-center text-white text-4xl font-bold" data-aos="zoom-in">
+                                <i data-lucide="user-round-check" class="w-16 h-16"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-brand-primary mb-2">Aisha, K-Drama Devotee</h3>
+                            <p class="text-sm text-gray-600 mb-1"><strong class="text-brand-accent">Age:</strong> 22 | <strong class="text-brand-accent">Occupation:</strong> University Student</p>
+                            <p class="text-sm text-gray-600 mb-1"><strong class="text-brand-accent">Location:</strong> Subang Jaya, Selangor</p>
+                            <p class="text-sm text-gray-700 mb-2"><strong class="text-brand-accent">Goals:</strong> Dress in current K-fashion trends seen in dramas, find unique, confident styles.</p>
+                            <p class="text-sm text-red-600"><strong class="text-brand-accent">Pain Points:</strong> Difficulty finding specific K-drama styles locally, risks of low-quality online K-fashion.</p>
+                        </div>
+                    </div>
+
+                    <!-- USP -->
+                    <div class="text-center md:text-left" data-aos="fade-left">
+                         <h3 class="text-xl font-semibold text-brand-primary mb-3 flex items-center justify-center md:justify-start"><i data-lucide="gem" class="w-5 h-5 mr-2"></i>Our Unique Selling Proposition (USP)</h3>
+                        <p class="text-2xl md:text-3xl font-extrabold text-purple-700 leading-tight mb-6">
+                            Mii Korea: Your <span class="bg-purple-200 px-1">trusted</span> provider of an <span class="bg-purple-200 px-1">authentic</span> Korean fashion experience, blending <span class="bg-purple-200 px-1">timeless elegance</span> with modern K-trends in inspiring settings, <span class="bg-purple-200 px-1">since 2011</span>.
+                        </p>
+                    </div>
+                </div>
+                 <!-- Hit Promotional Offer -->
+                <div class="bg-white p-8 rounded-lg shadow-2xl text-center" data-aos="zoom-in-up">
+                    <h3 class="text-2xl font-bold text-brand-primary mb-3 flex items-center justify-center"><i data-lucide="gift" class="w-6 h-6 mr-2"></i>Hit Promotional Offer</h3>
+                    <p class="text-lg text-gray-700 mb-2">"The Curated K-Style Set" – Seoul Style, Curated for You.</p>
+                    <p class="text-md text-gray-600 mb-6 max-w-xl mx-auto">A value bundle of 2-3 complementary Mii Korea pieces creating a cohesive K-inspired look, at 15-20% off individual prices.</p>
+                    <button id="promoOfferButton" class="bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-purple-700 transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50">
+                        Learn More About The Offer
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Marketing & Engagement Strategy -->
+        <section id="strategy" class="py-16 md:py-24 px-6 md:px-12 bg-strategy-bg">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-amber-700 mb-12" data-aos="fade-down">Igniting Desire: Marketing & Engagement</h2>
+                <div class="max-w-4xl mx-auto">
+                    <!-- Impulse Purchase Triggers -->
+                    <div class="mb-10" data-aos="fade-right">
+                        <h3 class="text-xl font-semibold text-amber-600 mb-4 flex items-center"><i data-lucide="zap" class="w-5 h-5 mr-2"></i>Impulse Purchase Triggers</h3>
+                        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow flex items-center space-x-3 has-tooltip" data-tooltip-title="Social Proof" data-tooltip-content="Showcasing 'Most Loved Sets' or number of sets sold builds trust and FOMO.">
+                                <i data-lucide="users-round" class="w-8 h-8 text-amber-500"></i>
+                                <div>
+                                    <h4 class="font-medium text-amber-700">Social Proof</h4>
+                                    <p class="text-xs text-gray-600">"Most Loved Sets" badges.</p>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow flex items-center space-x-3 has-tooltip" data-tooltip-title="Loss Aversion" data-tooltip-content="Limited-time offers or stock scarcity encourage immediate purchase to avoid missing out.">
+                                <i data-lucide="clock-fast-forward" class="w-8 h-8 text-amber-500"></i>
+                                <div>
+                                    <h4 class="font-medium text-amber-700">Loss Aversion</h4>
+                                    <p class="text-xs text-gray-600">"Limited Time Offer!"</p>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow flex items-center space-x-3 has-tooltip" data-tooltip-title="Anchoring Effect" data-tooltip-content="Displaying original price vs. offer price highlights savings and perceived value.">
+                                <i data-lucide="anchor" class="w-8 h-8 text-amber-500"></i>
+                                <div>
+                                    <h4 class="font-medium text-amber-700">Anchoring Effect</h4>
+                                    <p class="text-xs text-gray-600">"Save RM51!" visuals.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Creative Angles -->
+                    <div class="mb-10" data-aos="fade-left">
+                        <h3 class="text-xl font-semibold text-amber-600 mb-4 flex items-center"><i data-lucide="lightbulb" class="w-5 h-5 mr-2"></i>Creative Campaign Angles</h3>
+                        <ul class="list-none space-y-2 bg-white p-4 rounded-lg shadow">
+                            <li class="text-sm text-gray-700 flex items-start"><i data-lucide="film" class="w-4 h-4 mr-2 mt-1 text-amber-500 shrink-0"></i><strong>K-Drama Transformation:</strong> Aisha's "Get Ready With Me" TikTok in Mii Korea Set.</li>
+                            <li class="text-sm text-gray-700 flex items-start"><i data-lucide="key-round" class="w-4 h-4 mr-2 mt-1 text-amber-500 shrink-0"></i><strong>Unlock Your Style:</strong> Showcasing versatility of the K-Style Set to upgrade any wardrobe.</li>
+                            <li class="text-sm text-gray-700 flex items-start"><i data-lucide="sparkles" class="w-4 h-4 mr-2 mt-1 text-amber-500 shrink-0"></i><strong>Video Call Glow-Up:</strong> Quick "Wardrobe-Blah to Video-Call-Wow!" transformation.</li>
+                        </ul>
+                    </div>
+                    <!-- Slogan/Tagline -->
+                    <div class="text-center" data-aos="zoom-in">
+                        <h3 class="text-xl font-semibold text-amber-600 mb-2">Our Rallying Cry</h3>
+                        <p class="text-3xl md:text-4xl font-bold text-amber-700 italic">"Mii Korea: Seoul Style, Curated for You."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Proposed Viral Marketing & KPIs -->
+        <section id="viral-kpis" class="py-16 md:py-24 px-6 md:px-12 bg-viral-bg">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-12" data-aos="fade-down">Going Viral & Measuring Success</h2>
+                <div class="grid md:grid-cols-2 gap-10 items-start">
+                    <!-- Viral Marketing -->
+                    <div class="bg-white p-6 rounded-lg shadow-xl" data-aos="fade-right">
+                        <h3 class="text-xl font-semibold text-indigo-600 mb-4 flex items-center"><i data-lucide="share-2" class="w-5 h-5 mr-2"></i>Viral Marketing Engine</h3>
+                        <p class="text-sm text-gray-600 mb-4"><strong>#MiiKStyleUp Challenge:</strong> A TikTok/Instagram contest driving user-generated content and organic reach.</p>
+                        <div class="space-y-3 text-sm text-center">
+                            <div class="p-3 bg-indigo-100 rounded-md shadow-sm">User shares "wardrobe rut" <i data-lucide="help-circle" class="inline w-4 h-4 text-indigo-500"></i></div>
+                            <div class="flex justify-center"><i data-lucide="arrow-down" class="w-5 h-5 text-indigo-500"></i></div>
+                            <div class="p-3 bg-indigo-100 rounded-md shadow-sm">Mii Korea selects winners <i data-lucide="award" class="inline w-4 h-4 text-indigo-500"></i></div>
+                            <div class="flex justify-center"><i data-lucide="arrow-down" class="w-5 h-5 text-indigo-500"></i></div>
+                            <div class="p-3 bg-indigo-100 rounded-md shadow-sm">Winners receive "Curated K-Style Set" & post makeover <i data-lucide="gift" class="inline w-4 h-4 text-indigo-500"></i> <i data-lucide="video" class="inline w-4 h-4 text-indigo-500"></i></div>
+                            <div class="flex justify-center"><i data-lucide="arrow-down" class="w-5 h-5 text-indigo-500"></i></div>
+                            <div class="p-3 bg-indigo-100 rounded-md shadow-sm">Increased brand awareness & engagement <i data-lucide="trending-up" class="inline w-4 h-4 text-indigo-500"></i></div>
+                        </div>
+                         <p class="text-xs text-gray-500 mt-4 italic">Leverages social currency, emotion, and K-pop trends for shareability.</p>
+                    </div>
+                    <!-- KPIs -->
+                    <div class="bg-white p-6 rounded-lg shadow-xl" data-aos="fade-left">
+                        <h3 class="text-xl font-semibold text-indigo-600 mb-6 flex items-center"><i data-lucide="gauge" class="w-5 h-5 mr-2"></i>Key Performance Indicators (KPIs)</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-indigo-50 p-4 rounded-md shadow text-center has-tooltip" data-tooltip-title="Promotional Offer Sales" data-tooltip-content="Track units and revenue generated by 'The Curated K-Style Set'.">
+                                <i data-lucide="shopping-bag" class="w-10 h-10 text-indigo-500 mx-auto mb-2"></i>
+                                <p class="font-medium text-indigo-700 text-sm">Offer Sales</p>
+                            </div>
+                            <div class="bg-indigo-50 p-4 rounded-md shadow text-center has-tooltip" data-tooltip-title="Social Media Engagement" data-tooltip-content="Monitor likes, shares, comments, and usage of #MiiKStyleUp.">
+                                <i data-lucide="thumbs-up" class="w-10 h-10 text-indigo-500 mx-auto mb-2"></i>
+                                <p class="font-medium text-indigo-700 text-sm">Social Engagement</p>
+                            </div>
+                            <div class="bg-indigo-50 p-4 rounded-md shadow text-center has-tooltip" data-tooltip-title="Conversion Rate" data-tooltip-content="Measure website/Shopee traffic to purchase conversion for the offer.">
+                                <i data-lucide="mouse-pointer-click" class="w-10 h-10 text-indigo-500 mx-auto mb-2"></i>
+                                <p class="font-medium text-indigo-700 text-sm">Conversion Rate</p>
+                            </div>
+                            <div class="bg-indigo-50 p-4 rounded-md shadow text-center has-tooltip" data-tooltip-title="Customer Acquisition Cost (CAC)" data-tooltip-content="Calculate the cost to acquire a new customer through this campaign.">
+                                <i data-lucide="dollar-sign" class="w-10 h-10 text-indigo-500 mx-auto mb-2"></i>
+                                <p class="font-medium text-indigo-700 text-sm">CAC</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Call to Action -->
+        <section id="action" class="py-16 md:py-24 px-6 md:px-12 bg-brand-primary text-white text-center">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-down">Ready to Elevate Your Style?</h2>
+                <p class="text-lg md:text-xl mb-8 max-w-xl mx-auto" data-aos="fade-up">
+                    Discover authentic Korean fashion, curated just for you. Experience the Mii Korea difference today.
+                </p>
+                <a href="https://miikorea.com.my/" target="_blank"
+                   class="inline-block bg-brand-secondary text-brand-primary px-10 py-4 rounded-full text-xl font-bold hover:bg-cyan-500 transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-opacity-75"
+                   data-aos="zoom-in" data-aos-delay="100">
+                    Visit Mii Korea Online
+                </a>
+                <p class="mt-6 text-sm text-blue-200" data-aos="fade-up" data-aos-delay="200">
+                    Or visit our stores in Pavilion KL & Gurney Plaza.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 text-center py-6 px-4">
+        <p class="text-sm">Developed by My Ads Vantage (MAV) – AI Marketing that Sells For You.</p>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Initialize AOS
+        AOS.init({
+            duration: 700,
+            once: true,
+            offset: 50, 
+        });
+
+        // Smooth scrolling for navigation links & Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                 // Update icon - optional
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.setAttribute('data-lucide', 'menu');
+                } else {
+                    icon.setAttribute('data-lucide', 'x');
+                }
+                lucide.createIcons(); // Re-render icon
+            });
+        }
+        
+        document.querySelectorAll('nav a[href^="#"], #mobile-menu a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                     const icon = mobileMenuButton.querySelector('i');
+                     icon.setAttribute('data-lucide', 'menu');
+                     lucide.createIcons();
+                }
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+
+        // Chart.js Radar Chart (Section 3.3)
+        const radarCtx = document.getElementById('competitorRadarChart');
+        if (radarCtx) {
+            new Chart(radarCtx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Authenticity', 'Quality/Comfort', 'Trendiness',
+                        'Price Comp.', 'In-Store Exp.', 'Online Access',
+                        'Brand Trust', 'Uniqueness', 'Cust. Service'
+                    ],
+                    datasets: [{
+                        label: 'Mii Korea',
+                        data: [8, 7, 7, 6, 9, 7, 7, 9, 6],
+                        fill: true,
+                        backgroundColor: 'rgba(37, 99, 235, 0.2)', 
+                        borderColor: 'rgb(37, 99, 235)',
+                        pointBackgroundColor: 'rgb(37, 99, 235)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(37, 99, 235)'
+                    }, {
+                        label: 'Online Retailer', 
+                        data: [7, 6, 8, 7, 1, 8, 6, 6, 3], 
+                        fill: true,
+                        backgroundColor: 'rgba(22, 211, 238, 0.2)', 
+                        borderColor: 'rgb(22, 211, 238)',
+                        pointBackgroundColor: 'rgb(22, 211, 238)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(22, 211, 238)'
+                    }, {
+                        label: 'Fast Fashion', 
+                        data: [4, 4, 8, 8, 6, 7, 8, 3, 3], 
+                        fill: true,
+                        backgroundColor: 'rgba(107, 114, 128, 0.2)', // gray-500
+                        borderColor: 'rgb(107, 114, 128)',
+                        pointBackgroundColor: 'rgb(107, 114, 128)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(107, 114, 128)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    elements: { line: { borderWidth: 2 } },
+                    scales: {
+                        r: {
+                            angleLines: { display: true, color: 'rgba(0,0,0,0.1)' },
+                            suggestedMin: 0,
+                            suggestedMax: 10,
+                            grid: { color: 'rgba(0,0,0,0.1)' },
+                            pointLabels: { font: { size: 10, family: 'Inter' }, color: '#4B5563' }, // gray-600
+                            ticks: { stepSize: 2, backdropColor: 'transparent', color: '#6B7280' } // gray-500
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: 'Inter', size: 11 }, color: '#374151' } }, // gray-700
+                        tooltip: { titleFont: { family: 'Inter' }, bodyFont: { family: 'Inter' } }
+                    }
+                }
+            });
+        }
+
+        // SweetAlert2 for Promotional Offer (Section 4.3)
+        const offerButton = document.getElementById('promoOfferButton');
+        if (offerButton) {
+            offerButton.addEventListener('click', () => {
+                Swal.fire({
+                    title: '<strong class="text-brand-primary">Mii Korea\'s Hit Offer!</strong>',
+                    html: `
+                        <div class="text-left space-y-3 p-2">
+                            <p class="font-semibold text-lg text-purple-700">"The Curated K-Style Set"</p>
+                            <p><strong class="text-brand-primary">Concept:</strong> "Seoul Style, Curated for You"</p>
+                            <p><strong class="text-brand-primary">What it is:</strong> A special value bundle featuring 2-3 complementary Mii Korea pieces that create a cohesive, authentic K-inspired look.</p>
+                            <p><strong class="text-brand-primary">Value:</strong> Get the complete set for <span class="font-bold text-purple-600">15-20% LESS</span> than the total cost of individual items!</p>
+                            <p class="mt-2 text-sm">✨ Effortlessly achieve that chic Korean aesthetic and express your unique style. Perfect for K-Drama devotees and chic minimalists alike!</p>
+                        </div>
+                    `,
+                    iconHtml: '<i data-lucide="party-popper" class="w-16 h-16 text-purple-500"></i>',
+                    didOpen: () => { lucide.createIcons(); },
+                    confirmButtonText: 'Sounds Amazing!',
+                    confirmButtonColor: '#8B5CF6', // purple-500
+                    width: '90%',
+                    maxWidth: '600px',
+                    customClass: {
+                        popup: 'rounded-xl shadow-xl font-sans',
+                        title: 'font-sans',
+                        htmlContainer: 'text-brand-text text-sm md:text-base font-sans',
+                        confirmButton: 'font-sans font-semibold'
+                    },
+                    showClass: { popup: 'animate__animated animate__fadeInDown' },
+                    hideClass: { popup: 'animate__animated animate__fadeOutUp' },
+                });
+            });
+        }
+        // Link SweetAlert2 animations (optional but nice)
+        const animateCssLink = document.createElement('link');
+        animateCssLink.setAttribute('rel', 'stylesheet');
+        animateCssLink.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+        document.head.appendChild(animateCssLink);
+
+
+        // Tippy.js for tooltips
+        tippy('.has-tooltip', {
+            content(reference) {
+                const title = reference.getAttribute('data-tooltip-title');
+                const content = reference.getAttribute('data-tooltip-content');
+                return `<div class="p-1"><strong class="text-brand-primary font-semibold block mb-0.5">${title}</strong><span class="text-xs text-brand-accent">${content}</span></div>`;
+            },
+            allowHTML: true,
+            theme: 'light-border', 
+            animation: 'scale-subtle',
+            placement: 'top',
+            arrow: true,
+        });
+
+        // Notyf notification (Example: on page load) - Keep it subtle if used
+        const notyf = new Notyf({
+            duration: 4000,
+            position: { x: 'right', y: 'bottom' },
+            types: [
+                { type: 'info', background: '#2563EB', icon: { className: 'notyf__icon--info', tagName: 'div', text: ''} }
+            ],
+            ripple: true,
+            dismissible: true
+        });
+        // Example: notyf.open({type: 'info', message: 'Explore Mii Korea\'s Strategy!'});
+
+        // Active class for nav link on scroll
+        const sections = document.querySelectorAll("main section[id]");
+        const navLinks = document.querySelectorAll("nav ul li a.nav-link, #mobile-menu ul li a"); // Target desktop and mobile links
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            const navbarHeight = document.getElementById('navbar').offsetHeight;
+            
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - navbarHeight - 70; // Adjusted offset
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("text-brand-primary", "font-semibold", "bg-blue-50");
+                link.classList.add("text-gray-700", "hover:text-brand-primary");
+                if (link.getAttribute("href") === `#${current}`) {
+                    link.classList.add("text-brand-primary", "font-semibold", "bg-blue-50");
+                    link.classList.remove("text-gray-700", "hover:text-brand-primary");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
